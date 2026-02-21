@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CO.VER srl — Galleria Lavori Industriali</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR: copia identica di index.html -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <ul class="navbar__menu" id="navMenu">
+        <li class="navbar__item">
+          <a href="index.html#home" class="navbar__link">Home</a>
+        </li>
+        <li class="navbar__item">
+          <div class="navbar__group">
+            <a href="index.html#azienda" class="navbar__link">Azienda</a>
+            <button class="navbar__toggle" aria-label="Apri sottomenu Azienda">▾</button>
+          </div>
+          <ul class="navbar__dropdown">
+            <li><a href="azienda.html" class="navbar__dropdown-link">Storia</a></li>
+          </ul>
+        </li>
+        <li class="navbar__item">
+          <div class="navbar__group">
+            <a href="index.html#servizi" class="navbar__link">Servizi</a>
+            <button type="button" class="navbar__toggle" aria-label="Apri sottomenu">▾</button>
+          </div>
+          <ul class="navbar__dropdown">
+            <li><a href="edilizia.html" class="navbar__dropdown-link">Edilizia</a></li>
+            <li><a href="trasporti.html" class="navbar__dropdown-link">Trasporti e Logistica</a></li>
+            <li><a href="ambiente.html" class="navbar__dropdown-link">Ambiente</a></li>
+            <li><a href="consulenza.html" class="navbar__dropdown-link">Consulenza</a></li>
+          </ul>
+        </li>
+        <li class="navbar__item">
+          <div class="navbar__group">
+            <a href="index.html#galleria" class="navbar__link">Galleria Lavori</a>
+            <button type="button" class="navbar__toggle" aria-label="Apri sottomenu">▾</button>
+          </div>
+          <ul class="navbar__dropdown">
+            <li><a href="galleria-industriali.html" class="navbar__dropdown-link">Lavori Industriali</a></li>
+            <li><a href="galleria-infrastrutture.html" class="navbar__dropdown-link">Infrastrutture</a></li>
+            <li><a href="galleria-residenziali.html" class="navbar__dropdown-link">Lavori Residenziali</a></li>
+          </ul>
+        </li>
+        <li class="navbar__item">
+          <a href="automezzi.html" class="navbar__link">Automezzi</a>
+        </li>
+        <li class="navbar__item">
+          <a href="index.html#partner" class="navbar__link">Partner</a>
+        </li>
+        <li class="navbar__item">
+          <a href="index.html#contatti" class="navbar__link">Contatti</a>
+        </li>
+      </ul>
+      <button type="button" class="navbar__hamburger" id="hamburgerBtn" aria-label="Apri menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="navbar__overlay" id="navOverlay" aria-hidden="true"></div>
+
+  <!-- HERO MINI -->
+  <div class="hero-mini">
+    <div class="hero-mini__slide" style="background-image: url('asset/images/hero-industriali.jpg')"></div>
+    <div class="hero-mini__overlay"></div>
+    <div class="hero-mini__content">
+      <h1 class="hero-mini__titolo">Galleria Lavori Industriali</h1>
+      <p class="hero-mini__sub">Impianti · Stabilimenti · Opere civili industriali</p>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="galleria-page__intro">
+    <div class="container">
+      <h2 class="galleria-page__intro-titolo">I Nostri Lavori Industriali</h2>
+      <div class="galleria-page__divider"></div>
+      <p class="galleria-page__intro-testo">
+        CO.VER srl vanta una consolidata esperienza nella realizzazione di opere
+        civili per il settore industriale. Dalla costruzione di capannoni e
+        stabilimenti produttivi, alla realizzazione di piazzali e infrastrutture
+        di servizio per grandi aziende. Ogni intervento viene eseguito nel pieno
+        rispetto delle normative vigenti e con la massima attenzione alla
+        sicurezza in cantiere.
+      </p>
+    </div>
+  </div>
+
+  <!-- LISTA PROGETTI -->
+  <div class="galleria-page__progetti">
+    <div class="container">
+
+      <!-- PROGETTO 1 -->
+      <div class="progetto">
+        <div class="progetto__thumb" onclick="openLightbox('sparanise', 0)" role="button" tabindex="0" aria-label="Apri fotogallery Ansaldo Energia Sparanise">
+          <img src="asset/images/foto-cet-sparanise/foto-sparanise-1.jpg" alt="Ansaldo Energia Sparanise" loading="lazy">
+          <span class="progetto__count">📷 12 foto</span>
+        </div>
+        <div class="progetto__body">
+          <h2 class="progetto__titolo">Ansaldo Energia</h2>
+          <p class="progetto__location">Sparanise (CE)</p>
+          <p class="progetto__desc">Centrale Termoelettrica da 800 MW con ciclo combinato. Realizzazione di opere civili e infrastrutturali a supporto degli impianti Ansaldo Energia. Lavori di scavo, fondazioni, pavimentazioni e sistemazioni esterne</p>
+          <button class="progetto__cta" type="button" onclick="openLightbox('sparanise', 0)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+            Guarda la Fotogallery
+          </button>
+        </div>
+      </div>
+
+      <!-- PROGETTO 2 -->
+      <div class="progetto">
+        <div class="progetto__thumb" onclick="openLightbox('napoli', 0)" role="button" tabindex="0" aria-label="Apri fotogallery Ansaldo Energia Napoli">
+          <img src="asset/images/foto-cet-napoli/foto-1-napoli-L.jpg" alt="Ansaldo Energia Napoli" loading="lazy">
+          <span class="progetto__count">📷 22 foto</span>
+        </div>
+        <div class="progetto__body">
+          <h2 class="progetto__titolo">Ansaldo Energia</h2>
+          <p class="progetto__location">San Giovanni a Teduccio (NA)</p>
+          <p class="progetto__desc">Centrale Termoelettrica da 400 MW con ciclo combinato. Realizzazione di opere civili e infrastrutturali a supporto degli impianti Ansaldo Energia. Lavori di scavo, fondazioni, pavimentazioni e sistemazioni esterne.</p>
+          <button class="progetto__cta" type="button" onclick="openLightbox('napoli', 0)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+            Guarda la Fotogallery
+          </button>
+        </div>
+      </div>
+
+      <!-- PROGETTO 3 -->
+      <div class="progetto">
+        <div class="progetto__thumb" onclick="openLightbox('prysmian', 0)" role="button" tabindex="0" aria-label="Apri fotogallery Prysmian Group Arco Felice">
+          <img src="asset/images/foto-arco-felice/foto-1-arco-f.jpg" alt="Prysmian Group Arco Felice" loading="lazy">
+          <span class="progetto__count">📷 12 foto</span>
+        </div>
+        <div class="progetto__body">
+          <h2 class="progetto__titolo">Prysmian Group S.p.A.</h2>
+          <p class="progetto__location">Arco Felice (NA) — Campania</p>
+          <p class="progetto__desc">Reallizzazione TER.4 (Transformatore Elevatore Rete 4) Interventi di costruzione e manutenzione delle infrastrutture civili. Opere di scavo, drenaggio e sistemazione delle aree interne.</p>
+          <button class="progetto__cta" type="button" onclick="openLightbox('prysmian', 0)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+            Guarda la Fotogallery
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <div class="lightbox__header">
+      <span class="lightbox__project-title" id="lbTitle"></span>
+      <span class="lightbox__counter" id="lbCounter"></span>
+      <button class="lightbox__close" id="lbClose" aria-label="Chiudi">✕</button>
+    </div>
+    <div class="lightbox__main">
+      <button class="lightbox__arrow lightbox__arrow--prev" id="lbPrev" aria-label="Precedente">‹</button>
+      <img class="lightbox__img" id="lbImg" src="" alt="">
+      <span class="lightbox__img-placeholder" id="lbPlaceholder"></span>
+      <button class="lightbox__arrow lightbox__arrow--next" id="lbNext" aria-label="Successiva">›</button>
+    </div>
+    <div class="lightbox__strip" id="lbStrip"></div>
+  </div>
+
+  <!-- FOOTER: copia identica di index.html -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div class="footer__col">
+          <img src="asset/images/loghi/logo-cover-footer.png" alt="CO.VER srl" class="footer__logo">
+          <p class="footer__tagline">Edilizia · Trasporti · Ambiente</p>
+          <p class="footer__indirizzo">Via Gran Bretagna, 18<br>81055 Santa Maria Capua Vetere (CE)</p>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__titolo-col">Link Rapidi</h4>
+          <ul class="footer__links">
+            <li><a href="index.html#home" class="footer__link">Home</a></li>
+            <li><a href="azienda.html" class="footer__link">Azienda</a></li>
+            <li><a href="index.html#servizi" class="footer__link">Servizi</a></li>
+            <li><a href="index.html#galleria" class="footer__link">Galleria Lavori</a></li>
+            <li><a href="automezzi.html" class="footer__link">Automezzi</a></li>
+            <li><a href="index.html#partner" class="footer__link">Partner</a></li>
+            <li><a href="index.html#contatti" class="footer__link">Contatti</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__titolo-col">Seguici</h4>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+          <div class="footer__contatti-rapidi">
+            <p>Tel: 0823 704255</p>
+            <p>Cell: 335 7552975</p>
+            <p>verrengiacover@covercostruzioni.it</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer__copyright">
+      <div class="container">
+        <p>© 2025 CO.VER srl — Tutti i diritti riservati | P.IVA: inserire partita iva</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+  <script>
+    // Dati gallerie — sostituire src con percorsi reali delle foto
+    var galleries = {
+      ferrarelle: {
+        title: 'Ferrarelle S.p.A. — Riardo (CE)',
+        photos: Array.from({ length: 1 }, function (_, i) {
+          return { src: '', alt: 'Ferrarelle foto ' + (i + 1), label: 'Foto ' + (i + 1) };
+        })
+      },
+      sparanise: {
+        title: 'Ansaldo Energia — CET Sparanise (CE)',
+        photos: [
+          { src: 'asset/images/foto-cet-sparanise/foto-sparanise-1.jpg',  alt: 'CET Sparanise foto 1' },
+          { src: 'asset/images/foto-cet-sparanise/foto-sparanise-2.jpg',  alt: 'CET Sparanise foto 2' },
+          { src: 'asset/images/foto-cet-sparanise/foto-sparanise-3.jpg',  alt: 'CET Sparanise foto 3' },
+          { src: 'asset/images/foto-cet-sparanise/foto-sparanise-4.jpg',  alt: 'CET Sparanise foto 4' },
+          { src: 'asset/images/foto-cet-sparanise/foto-sparanise-5.jpg',  alt: 'CET Sparanise foto 5' },
+          { src: 'asset/images/foto-cet-sparanise/foto-sparanise-6.jpg',  alt: 'CET Sparanise foto 6' },
+          { src: 'asset/images/foto-cet-sparanise/foto-sparanise-7.jpg',  alt: 'CET Sparanise foto 7' },
+          { src: 'asset/images/foto-cet-sparanise/foto-sparanise-8.jpg',  alt: 'CET Sparanise foto 8' },
+          { src: 'asset/images/foto-cet-sparanise/foto-sparanise-9.jpg',  alt: 'CET Sparanise foto 9' },
+          { src: 'asset/images/foto-cet-sparanise/foto-sparanise-10.jpg', alt: 'CET Sparanise foto 10' },
+          { src: 'asset/images/foto-cet-sparanise/foto-sparanise-11.jpg', alt: 'CET Sparanise foto 11' },
+          { src: 'asset/images/foto-cet-sparanise/foto-sparanise-12.jpg', alt: 'CET Sparanise foto 12' }
+        ]
+      },
+      napoli: {
+        title: 'Ansaldo Energia — CET San Giovanni a Teduccio (NA)',
+        photos: [
+          { src: 'asset/images/foto-cet-napoli/foto-1-napoli-L.jpg',  alt: 'CET Napoli foto 1' },
+          { src: 'asset/images/foto-cet-napoli/foto-2-napoli-L.jpg',  alt: 'CET Napoli foto 2' },
+          { src: 'asset/images/foto-cet-napoli/foto-3-napoli-L.jpg',  alt: 'CET Napoli foto 3' },
+          { src: 'asset/images/foto-cet-napoli/foto-4-napoli-L.jpg',  alt: 'CET Napoli foto 4' },
+          { src: 'asset/images/foto-cet-napoli/foto-5-napoli-L.jpg',  alt: 'CET Napoli foto 5' },
+          { src: 'asset/images/foto-cet-napoli/foto-6-napoli-L.jpg',  alt: 'CET Napoli foto 6' },
+          { src: 'asset/images/foto-cet-napoli/foto-7-napoli-L.jpg',  alt: 'CET Napoli foto 7' },
+          { src: 'asset/images/foto-cet-napoli/foto-8-napoli-L.jpg',  alt: 'CET Napoli foto 8' },
+          { src: 'asset/images/foto-cet-napoli/foto-9-napoli-L.jpg',  alt: 'CET Napoli foto 9' },
+          { src: 'asset/images/foto-cet-napoli/foto-10-napoli-L.jpg', alt: 'CET Napoli foto 10' },
+          { src: 'asset/images/foto-cet-napoli/foto-11-napoli-L.jpg', alt: 'CET Napoli foto 11' },
+          { src: 'asset/images/foto-cet-napoli/foto-12-napoli-L.jpg', alt: 'CET Napoli foto 12' },
+          { src: 'asset/images/foto-cet-napoli/foto-13-napoli-L.jpg', alt: 'CET Napoli foto 13' },
+          { src: 'asset/images/foto-cet-napoli/foto-14-napoli-L.jpg', alt: 'CET Napoli foto 14' },
+          { src: 'asset/images/foto-cet-napoli/foto-15-napoli-L.jpg', alt: 'CET Napoli foto 15' },
+          { src: 'asset/images/foto-cet-napoli/foto-16-napoli-L.jpg', alt: 'CET Napoli foto 16' },
+          { src: 'asset/images/foto-cet-napoli/foto-17-napoli-L.jpg', alt: 'CET Napoli foto 17' },
+          { src: 'asset/images/foto-cet-napoli/foto-18-napoli-L.jpg', alt: 'CET Napoli foto 18' },
+          { src: 'asset/images/foto-cet-napoli/foto-19-napoli-L.jpg', alt: 'CET Napoli foto 19' },
+          { src: 'asset/images/foto-cet-napoli/foto-20-napoli-L.jpg', alt: 'CET Napoli foto 20' },
+          { src: 'asset/images/foto-cet-napoli/foto-21-napoli-L.jpg', alt: 'CET Napoli foto 21' },
+          { src: 'asset/images/foto-cet-napoli/foto-22-napoli-L.jpg', alt: 'CET Napoli foto 22' }
+        ]
+      },
+      prysmian: {
+        title: 'Prysmian Group S.p.A. — Arco Felice (NA)',
+        photos: [
+          { src: 'asset/images/foto-arco-felice/foto-1-arco-f.jpg',  alt: 'Prysmian Arco Felice foto 1' },
+          { src: 'asset/images/foto-arco-felice/foto-2-arco-f.jpg',  alt: 'Prysmian Arco Felice foto 2' },
+          { src: 'asset/images/foto-arco-felice/foto-3-arco-f.jpg',  alt: 'Prysmian Arco Felice foto 3' },
+          { src: 'asset/images/foto-arco-felice/foto-4-arco-f.jpg',  alt: 'Prysmian Arco Felice foto 4' },
+          { src: 'asset/images/foto-arco-felice/foto-5-arco-f.jpg',  alt: 'Prysmian Arco Felice foto 5' },
+          { src: 'asset/images/foto-arco-felice/foto-6-arco-f.jpg',  alt: 'Prysmian Arco Felice foto 6' },
+          { src: 'asset/images/foto-arco-felice/foto-7-arco-f.jpg',  alt: 'Prysmian Arco Felice foto 7' },
+          { src: 'asset/images/foto-arco-felice/foto-8-arco-f.jpg',  alt: 'Prysmian Arco Felice foto 8' },
+          { src: 'asset/images/foto-arco-felice/foto-9-arco-f.jpg',  alt: 'Prysmian Arco Felice foto 9' },
+          { src: 'asset/images/foto-arco-felice/foto-10-arco-f.jpg', alt: 'Prysmian Arco Felice foto 10' },
+          { src: 'asset/images/foto-arco-felice/foto-11-arco-f.jpg', alt: 'Prysmian Arco Felice foto 11' },
+          { src: 'asset/images/foto-arco-felice/foto-12-arco-f.jpg', alt: 'Prysmian Arco Felice foto 12' }
+        ]
+      }
+    };
+
+    var currentGallery = null;
+    var currentIndex = 0;
+    var lightbox = document.getElementById('lightbox');
+    var lbTitle = document.getElementById('lbTitle');
+    var lbCounter = document.getElementById('lbCounter');
+    var lbClose = document.getElementById('lbClose');
+    var lbPrev = document.getElementById('lbPrev');
+    var lbNext = document.getElementById('lbNext');
+    var lbImg = document.getElementById('lbImg');
+    var lbStrip = document.getElementById('lbStrip');
+    var lbPH = document.getElementById('lbPlaceholder');
+
+    function openLightbox(id, start) {
+      currentGallery = galleries[id];
+      currentIndex = start || 0;
+      buildStrip();
+      showPhoto(currentIndex);
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      lbClose.focus();
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function buildStrip() {
+      lbStrip.innerHTML = '';
+      lbTitle.textContent = currentGallery.title;
+      currentGallery.photos.forEach(function (photo, i) {
+        var thumb = document.createElement('img');
+        thumb.className = 'lightbox__thumb';
+        thumb.src = photo.src || 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+        thumb.alt = photo.alt;
+        thumb.style.background = '#3a3a4a';
+        thumb.addEventListener('click', function () { showPhoto(i); });
+        lbStrip.appendChild(thumb);
+      });
+    }
+
+    function showPhoto(index) {
+      var total = currentGallery.photos.length;
+      currentIndex = (index + total) % total;
+      var photo = currentGallery.photos[currentIndex];
+      if (photo.src) {
+        lbImg.src = photo.src;
+        lbImg.alt = photo.alt;
+        lbImg.style.display = 'block';
+        lbPH.style.display = 'none';
+      } else {
+        lbImg.style.display = 'none';
+        lbPH.style.display = 'block';
+        lbPH.textContent = photo.label;
+      }
+      lbCounter.textContent = (currentIndex + 1) + ' / ' + total;
+      var thumbs = lbStrip.querySelectorAll('.lightbox__thumb');
+      thumbs.forEach(function (t, i) { t.classList.toggle('active', i === currentIndex); });
+      if (thumbs[currentIndex]) {
+        thumbs[currentIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    }
+
+    lbClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function (e) { if (e.target === lightbox) closeLightbox(); });
+    lbPrev.addEventListener('click', function (e) { e.stopPropagation(); showPhoto(currentIndex - 1); });
+    lbNext.addEventListener('click', function (e) { e.stopPropagation(); showPhoto(currentIndex + 1); });
+
+    document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'ArrowLeft') showPhoto(currentIndex - 1);
+      if (e.key === 'ArrowRight') showPhoto(currentIndex + 1);
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    var touchStartX = 0;
+    lightbox.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+    lightbox.addEventListener('touchend', function (e) {
+      var diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) { diff > 0 ? showPhoto(currentIndex + 1) : showPhoto(currentIndex - 1); }
+    }, { passive: true });
+  </script>
+</body>
+</html>

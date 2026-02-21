@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CO.VER srl — Chi Siamo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR: copia identica di index.html -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a class="navbar__brand" href="index.html#home">
+        <img src="asset/images/loghi/logo-cover-footer.png" alt="CO.VER srl" class="navbar__brand-logo">
+      </a>
+      <ul class="navbar__menu" id="navMenu">
+        <li class="navbar__item">
+          <a class="navbar__link" href="index.html#home">Home</a>
+        </li>
+        <li class="navbar__item">
+          <div class="navbar__group">
+            <a href="index.html#azienda" class="navbar__link">Azienda</a>
+            <button class="navbar__toggle" aria-label="Apri sottomenu Azienda">▾</button>
+          </div>
+          <ul class="navbar__dropdown">
+            <li><a href="azienda.html" class="navbar__dropdown-link">Storia</a></li>
+          </ul>
+        </li>
+        <li class="navbar__item">
+          <div class="navbar__group">
+            <a href="index.html#servizi" class="navbar__link">Servizi</a>
+            <button type="button" class="navbar__toggle" aria-label="Apri sottomenu">▾</button>
+          </div>
+          <ul class="navbar__dropdown">
+            <li><a href="edilizia.html" class="navbar__dropdown-link">Edilizia</a></li>
+            <li><a href="trasporti.html" class="navbar__dropdown-link">Trasporti e Logistica</a></li>
+            <li><a href="ambiente.html" class="navbar__dropdown-link">Ambiente</a></li>
+            <li><a href="consulenza.html" class="navbar__dropdown-link">Consulenza</a></li>
+          </ul>
+        </li>
+        <li class="navbar__item">
+          <div class="navbar__group">
+            <a href="index.html#galleria" class="navbar__link">Galleria Lavori</a>
+            <button type="button" class="navbar__toggle" aria-label="Apri sottomenu">▾</button>
+          </div>
+          <ul class="navbar__dropdown">
+            <li><a href="galleria-industriali.html" class="navbar__dropdown-link">Lavori Industriali</a></li>
+            <li><a href="galleria-infrastrutture.html" class="navbar__dropdown-link">Infrastrutture</a></li>
+            <li><a href="galleria-residenziali.html" class="navbar__dropdown-link">Lavori Residenziali</a></li>
+          </ul>
+        </li>
+        <li class="navbar__item">
+          <a class="navbar__link" href="automezzi.html">Automezzi</a>
+        </li>
+        <li class="navbar__item">
+          <a class="navbar__link" href="index.html#partner">Partner</a>
+        </li>
+        <li class="navbar__item">
+          <a class="navbar__link" href="index.html#contatti">Contatti</a>
+        </li>
+      </ul>
+      <button type="button" class="navbar__hamburger" id="hamburgerBtn" aria-label="Apri menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="navbar__overlay" id="navOverlay" aria-hidden="true"></div>
+
+  <!-- HERO MINI -->
+  <div class="hero-mini">
+    <div class="hero-mini__slide" style="background-image: url('asset/images/hero-azienda.jpg')"></div>
+    <div class="hero-mini__overlay"></div>
+    <div class="hero-mini__content">
+      <h1 class="hero-mini__titolo">Chi Siamo</h1>
+      <p class="hero-mini__sub">Una storia di competenza, passione e crescita</p>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <section class="timeline-section">
+    <div class="container">
+      <h2 class="azienda-page__titolo">La Nostra Storia</h2>
+      <div class="azienda-page__divider"></div>
+
+      <div class="timeline">
+
+        <!-- 1988 -->
+        <div class="timeline__item">
+          <div class="timeline__anno">1988</div>
+          <div class="timeline__content">
+            <h3 class="timeline__titolo">Gli Inizi</h3>
+            <p class="timeline__testo">il Geom. Nello Verrengia muove i primi passi nel mondo dell'edilizia e delle costruzioni. Da responsabile di cantieri, acquisisce sul campo una competenza profonda nei settori dell'edilizia civile e della gestione di cantieri complessi.</p>
+          </div>
+        </div>
+
+        <!-- 2000 -->
+        <div class="timeline__item">
+          <div class="timeline__anno">2000</div>
+          <div class="timeline__content">
+            <h3 class="timeline__titolo">Nasce la CALES Costruzioni srl</h3>
+            <p class="timeline__testo">Dopo oltre un decennio di esperienza maturata sul campo, il Geom. Nello Verrengia fonda la CALES Costruzioni srl. l'azienda viene ubicata presso gli uffici di Casale di Carinola (CE) dove colloca su un grande spiazzale annesso agli uffici un deposito per le attrezzature e automezzi. L'azienda inizia per la prima volta ad uscire dal quel ristretto ambito di cantiere residenziale, per operare nel settore edile industriale e delle infrastrutture, consolidando rapporti con committenti pubblici e privati e costruendo una solida reputazione nel territorio campano e nazionale.</p>
+          </div>
+        </div>
+
+        <!-- 2010 -->
+        <div class="timeline__item">
+          <div class="timeline__anno">2010</div>
+          <div class="timeline__content">
+            <h3 class="timeline__titolo">Nasce la CO.VER srl</h3>
+            <p class="timeline__testo">Dalle ceneri della CALES Costruzioni srl nasce la CO.VER. Srl — Costruzioni Verrengia. Con un patrimonio di oltre vent'anni di esperienza, l'azienda si sposta a Santa Maria Capua Vetere (CE) per strutturarsi con una nuova identità e un organico qualificato, nonché, ad una nuova e profonda conoscenza delle innumerevoli innovazioni legate all'edilizia, all'analisi approfondita del mercato e del suo andamento, alle procedure lavorative e produttive in sintonia con i più recenti concetti di sicurezza e qualità globale.</p>
+          </div>
+        </div>
+
+        <!-- OGGI -->
+        <div class="timeline__item">
+          <div class="timeline__anno">Oggi</div>
+          <div class="timeline__content">
+            <h3 class="timeline__titolo">Una Realtà Consolidata</h3>
+            <p class="timeline__testo">Forti di quasi quarant'anni di esperienza diretta nel settore, la CO.VER srl conta oggi oltre 50 tra tecnici e operai specializzati, un parco macchine con più di 40 automezzi e centinaia di opere realizzate su tutto il territorio nazionale. Una storia fatta di competenza, sicurezza e affidabilità al servizio di grandi committenti pubblici e privati, che la portano ad ampliare la propria operatività ai settori del trasporto, della logistica e della gestione ambientale, collocandola in una posizione d'avanguardia.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOTO AZIENDA -->
+  <section class="azienda-foto">
+    <div class="container">
+      <div class="azienda-foto__grid">
+        <div class="azienda-foto__item">
+          <img src="asset/images/foto-azienda/foto-ufficio1.jpg" alt="Uffici CO.VER srl" loading="lazy">
+        </div>
+        <div class="azienda-foto__item">
+          <img src="asset/images/foto-azienda/foto-ufficio3.jpg" alt="Uffici CO.VER srl" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER: copia identica di index.html -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div class="footer__col">
+          <img src="asset/images/loghi/logo-cover-footer.png" alt="CO.VER srl" class="footer__logo">
+          <p class="footer__tagline">Edilizia · Trasporti · Ambiente</p>
+          <p class="footer__indirizzo">Via Gran Bretagna, 18<br>81055 Santa Maria Capua Vetere (CE)</p>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__titolo-col">Link Rapidi</h4>
+          <ul class="footer__links">
+            <li><a href="index.html#home" class="footer__link">Home</a></li>
+            <li><a href="index.html#azienda" class="footer__link">Chi Siamo</a></li>
+            <li><a href="azienda.html" class="footer__link">Storia</a></li>
+            <li><a href="index.html#servizi" class="footer__link">Servizi</a></li>
+            <li><a href="index.html#galleria" class="footer__link">Galleria Lavori</a></li>
+            <li><a href="automezzi.html" class="footer__link">Automezzi</a></li>
+            <li><a href="index.html#partner" class="footer__link">Partner</a></li>
+            <li><a href="index.html#contatti" class="footer__link">Contatti</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__titolo-col">Seguici</h4>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+          <div class="footer__contatti-rapidi">
+            <p>Tel: 0823 704255</p>
+            <p>Cell: 335 7552975</p>
+            <p>verrengiacover@covercostruzioni.it</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer__copyright">
+      <div class="container">
+        <p>© 2025 CO.VER srl — Tutti i diritti riservati | P.IVA: inserire partita iva</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

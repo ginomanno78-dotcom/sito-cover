@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CO.VER srl — Edilizia, Trasporti, Ambiente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="#home" class="navbar__brand">
+        <img src="asset/images/loghi/logo-cover-footer.png" alt="CO.VER srl" class="navbar__brand-logo">
+      </a>
+      <ul class="navbar__menu" id="navMenu">
+        <li class="navbar__item">
+          <a href="#home" class="navbar__link">Home</a>
+        </li>
+        <li class="navbar__item">
+          <div class="navbar__group">
+            <a href="index.html#azienda" class="navbar__link">Azienda</a>
+            <button class="navbar__toggle" aria-label="Apri sottomenu Azienda">▾</button>
+          </div>
+          <ul class="navbar__dropdown">
+            <li><a href="azienda.html" class="navbar__dropdown-link">Storia</a></li>
+          </ul>
+        </li>
+        <li class="navbar__item">
+          <div class="navbar__group">
+            <a href="#servizi" class="navbar__link">Servizi</a>
+            <button type="button" class="navbar__toggle" aria-label="Apri sottomenu">▾</button>
+          </div>
+          <ul class="navbar__dropdown">
+            <li><a href="edilizia.html" class="navbar__dropdown-link">Edilizia</a></li>
+            <li><a href="trasporti.html" class="navbar__dropdown-link">Trasporti e Logistica</a></li>
+            <li><a href="ambiente.html" class="navbar__dropdown-link">Ambiente</a></li>
+            <li><a href="consulenza.html" class="navbar__dropdown-link">Consulenza</a></li>
+          </ul>
+        </li>
+        <li class="navbar__item">
+          <div class="navbar__group">
+            <a href="#galleria" class="navbar__link">Galleria Lavori</a>
+            <button type="button" class="navbar__toggle" aria-label="Apri sottomenu">▾</button>
+          </div>
+          <ul class="navbar__dropdown">
+            <li><a href="galleria-industriali.html" class="navbar__dropdown-link">Lavori Industriali</a></li>
+            <li><a href="galleria-infrastrutture.html" class="navbar__dropdown-link">Infrastrutture</a></li>
+            <li><a href="galleria-residenziali.html" class="navbar__dropdown-link">Lavori Residenziali</a></li>
+          </ul>
+        </li>
+        <li class="navbar__item">
+          <a href="automezzi.html" class="navbar__link">Automezzi</a>
+        </li>
+        <li class="navbar__item">
+          <a href="#partner" class="navbar__link">Partner</a>
+        </li>
+        <li class="navbar__item">
+          <a href="#contatti" class="navbar__link">Contatti</a>
+        </li>
+      </ul>
+      <button type="button" class="navbar__hamburger" id="hamburgerBtn" aria-label="Apri menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="navbar__overlay" id="navOverlay" aria-hidden="true"></div>
+
+  <!-- MAIN -->
+  <main id="main">
+    <section class="hero" id="home">
+      <!-- Slideshow sfondi -->
+      <div class="hero__slides">
+        <div class="hero__slide active" style="background-image: url('asset/images/hero-1.jpg')"></div>
+        <div class="hero__slide" style="background-image: url('asset/images/hero-2.jpg')"></div>
+        <div class="hero__slide" style="background-image: url('asset/images/hero-3.jpg')"></div>
+      </div>
+      <!-- Overlay scuro -->
+      <div class="hero__overlay hero__overlay--1"></div>
+      <div class="hero__overlay hero__overlay--2"></div>
+      <div class="hero__overlay hero__overlay--3"></div>
+      <!-- Contenuto centrato -->
+      <div class="hero__content">
+        <img src="asset/images/loghi/cover-logo.png" alt="CO.VER srl" class="hero__logo">
+        <!-- Testo dinamico che cambia con ogni slide -->
+        <p class="hero__slide-text" id="heroSlideText">Edilizia</p>
+        <p class="hero__sub2">Esperienza consolidata, sicurezza in cantiere<br>e un partner affidabile per ogni intervento.</p>
+        <div class="hero__cta">
+          <a href="#contatti" class="btn btn--primary">Richiedi un Preventivo</a>
+          <a href="#servizi" class="btn btn--outline">Scopri i Nostri Servizi</a>
+        </div>
+      </div>
+      <!-- Dot navigation -->
+      <div class="hero__dots">
+        <button type="button" class="hero__dot active" data-index="0" aria-label="Slide 1"></button>
+        <button type="button" class="hero__dot" data-index="1" aria-label="Slide 2"></button>
+        <button type="button" class="hero__dot" data-index="2" aria-label="Slide 3"></button>
+      </div>
+    </section>
+
+<section class="azienda" id="azienda">
+  <div class="container">
+
+    <!-- Riga 1: descrizione sx + contatori dx -->
+    <div class="azienda__top">
+      <div class="azienda__testo">
+        <h2 class="azienda__titolo">Chi Siamo</h2>
+        <div class="azienda__divider"></div>
+        <p class="azienda__paragrafo">Con quasi quarant'anni di esperienza nel settore delle costruzioni, CO.VER srl è oggi un punto di riferimento per committenti pubblici e privati in tutta Italia. Nata dall'esperienza diretta sul campo di Nello Verrengia, l'azienda opera nei settori dell'edilizia civile e industriale, del trasporto e della logistica e della gestione ambientale, con un organico qualificato e un parco macchine all'avanguardia.</p>
+        <a href="azienda.html" class="azienda__cta">Scopri la Nostra Storia →</a>
+      </div>
+      <div class="azienda__counter-grid">
+        <div class="azienda__counter">
+          <span class="counter__numero" data-target="200">0</span>
+          <span class="counter__plus">+</span>
+          <p class="counter__label">Opere Realizzate</p>
+        </div>
+        <div class="azienda__counter">
+          <span class="counter__numero" data-target="50">0</span>
+          <span class="counter__plus">+</span>
+          <p class="counter__label">Tecnici e Operai</p>
+        </div>
+        <div class="azienda__counter">
+          <span class="counter__numero" data-target="40">0</span>
+          <span class="counter__plus">+</span>
+          <p class="counter__label">Automezzi in Flotta</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Riga 2: 3 card certificazioni -->
+    <div class="azienda__cert-grid">
+      <div class="azienda__cert-card">
+        <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+        <h3>ISO 9001:2015</h3>
+        <p>La CO.VER srl è certificata secondo le norme UNI EN ISO 9001:2015 per il sistema di gestione della qualità. Attestazione n. C2020-03402 rilasciata da Perry Johnson Registrars, INC.</p>
+      </div>
+      <div class="azienda__cert-card">
+        <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <h3>Attestazione SOA</h3>
+        <p>La partecipazione ad appalti pubblici e la certificazione del sistema qualità hanno consentito l'ottenimento dell'attestazione SOA per le categorie OG1 IV e OG6 II. Attestazione n. 4742/46/01 del 15/07/2020.</p>
+      </div>
+      <div class="azienda__cert-card">
+        <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        <h3>Albo Gestori Ambientali</h3>
+        <p>La CO.VER srl è iscritta all'Albo Nazionale Gestori Ambientali per la raccolta e il trasporto di rifiuti, operando nel pieno rispetto delle normative ambientali vigenti a livello nazionale ed europeo.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <section class="servizi" id="servizi">
+      <div class="container">
+        <h2 class="servizi__titolo">I Nostri Servizi</h2>
+        <div class="servizi__divider"></div>
+        <div class="servizi__grid">
+
+          <div class="servizi__card">
+            <div class="servizi__card-img img-placeholder" data-label="Edilizia"></div>
+            <div class="servizi__card-body">
+              <h3 class="servizi__card-titolo">Edilizia</h3>
+              <p class="servizi__card-testo">Industriale, privata e opere stradali: costruiamo con competenza e rispetto delle tempistiche.</p>
+              <a href="edilizia.html" class="servizi__card-cta">Scopri di Più</a>
+            </div>
+          </div>
+
+          <div class="servizi__card">
+            <div class="servizi__card-img img-placeholder" data-label="Trasporti e Logistica"></div>
+            <div class="servizi__card-body">
+              <h3 class="servizi__card-titolo">Trasporti e Logistica</h3>
+              <p class="servizi__card-testo">Soluzioni flessibili per il trasporto merci C/Terzi e la movimentazione logistica.</p>
+              <a href="trasporti.html" class="servizi__card-cta">Scopri di Più</a>
+            </div>
+          </div>
+
+          <div class="servizi__card">
+            <div class="servizi__card-img img-placeholder" data-label="Ambiente"></div>
+            <div class="servizi__card-body">
+              <h3 class="servizi__card-titolo">Ambiente</h3>
+              <p class="servizi__card-testo">Raccolta e trasporto rifiuti con iscrizione all'Albo Nazionale Gestori Ambientali.</p>
+              <a href="ambiente.html" class="servizi__card-cta">Scopri di Più</a>
+            </div>
+          </div>
+
+          <div class="servizi__card">
+            <div class="servizi__card-img img-placeholder" data-label="Consulenza"></div>
+            <div class="servizi__card-body">
+              <h3 class="servizi__card-titolo">Consulenza</h3>
+              <p class="servizi__card-testo">Supporto tecnico e consulenza specializzata per ogni fase del progetto edilizio.</p>
+              <a href="consulenza.html" class="servizi__card-cta">Scopri di Più</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="galleria" id="galleria">
+      <div class="container">
+        <h2 class="galleria__titolo">Galleria Lavori</h2>
+        <div class="galleria__divider"></div>
+        <div class="galleria__grid">
+
+          <a href="galleria-industriali.html" class="galleria__card">
+            <img src="asset/images/foto-cet-napoli/foto-21-napoli-L.jpg" alt="Lavori Industriali" class="galleria__card-img" loading="lazy">
+            <div class="galleria__card-overlay">
+              <h3 class="galleria__card-titolo">Lavori Industriali</h3>
+            </div>
+          </a>
+
+          <a href="galleria-infrastrutture.html" class="galleria__card">
+            <img src="asset/images/foto-eolico/foto-eolico-6.jpg" alt="Infrastrutture" class="galleria__card-img" loading="lazy">
+            <div class="galleria__card-overlay">
+              <h3 class="galleria__card-titolo">Infrastrutture</h3>
+            </div>
+          </a>
+
+          <a href="galleria-residenziali.html" class="galleria__card">
+            <img src="asset/images/foto-resid-sparanise/vista3.jpg" alt="Lavori Residenziali" class="galleria__card-img" loading="lazy">
+            <div class="galleria__card-overlay">
+              <h3 class="galleria__card-titolo">Lavori Residenziali</h3>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="partner" id="partner">
+      <div class="container">
+        <h2 class="partner__titolo">I Nostri Partner</h2>
+        <div class="partner__divider"></div>
+        <p class="partner__sottotitolo">Aziende e committenti con cui CO.VER srl collabora con continuità</p>
+      </div>
+      <!-- Carosello fuori dal container per andare a tutto schermo -->
+      <div class="partner__carosello">
+        <div class="partner__track">
+          <!-- Primo set -->
+          <div class="partner__logo">
+            <img src="asset/images/loghi/logo-ferrarelle.png" alt="Ferrarelle" loading="lazy">
+          </div>
+          <div class="partner__logo">
+            <img src="asset/images/loghi/logo-ansaldo.png" alt="Ansaldo Energia" loading="lazy">
+          </div>
+          <div class="partner__logo">
+            <img src="asset/images/loghi/logo-edison.png" alt="Edison" loading="lazy">
+          </div>
+          <div class="partner__logo">
+            <img src="asset/images/loghi/logo-prysmian.png" alt="Prysmian" loading="lazy">
+          </div>
+          <div class="partner__logo">
+            <img src="asset/images/loghi/logo-eni.png" alt="ENI" loading="lazy">
+          </div>
+          <!-- Secondo set identico per loop infinito -->
+          <div class="partner__logo">
+            <img src="asset/images/loghi/logo-ferrarelle.png" alt="Ferrarelle" loading="lazy">
+          </div>
+          <div class="partner__logo">
+            <img src="asset/images/loghi/logo-ansaldo.png" alt="Ansaldo Energia" loading="lazy">
+          </div>
+          <div class="partner__logo">
+            <img src="asset/images/loghi/logo-edison.png" alt="Edison" loading="lazy">
+          </div>
+          <div class="partner__logo">
+            <img src="asset/images/loghi/logo-prysmian.png" alt="Prysmian" loading="lazy">
+          </div>
+          <div class="partner__logo">
+            <img src="asset/images/loghi/logo-eni.png" alt="ENI" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contatti" id="contatti">
+      <div class="container">
+        <h2 class="contatti__titolo">Contatti</h2>
+        <div class="contatti__divider"></div>
+        <div class="contatti__grid">
+
+          <!-- Colonna sinistra: informazioni -->
+          <div class="contatti__info">
+            <div class="contatti__info-item">
+              <svg class="contatti__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div>
+                <p>Via Gran Bretagna, 18</p>
+                <p>81055 Santa Maria Capua Vetere (CE)</p>
+              </div>
+            </div>
+            <div class="contatti__info-item">
+              <svg class="contatti__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.74a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <div>
+                <p>Fisso: 0823 704255</p>
+                <p>Nello Verrengia: 335 7552975</p>
+              </div>
+            </div>
+            <div class="contatti__info-item">
+              <svg class="contatti__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+              <div>
+                <p>verrengiacover@covercostruzioni.it</p>
+                <p>PEC: cover3@legalmail.it</p>
+              </div>
+            </div>
+            <div class="contatti__info-item">
+              <svg class="contatti__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+              <div>
+                <p>Lunedì – Venerdì</p>
+                <p>09:00 – 13:00 / 15:00 – 19:00</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Colonna destra: form -->
+          <div class="contatti__form-wrapper">
+            <form class="contatti__form" id="contatti-form" novalidate>
+              <div class="form__gruppo">
+                <input type="text" id="nome" name="nome" placeholder="Nome e Cognome *" class="form__input" required>
+                <span class="form__errore" id="errore-nome"></span>
+              </div>
+              <div class="form__gruppo">
+                <input type="email" id="email" name="email" placeholder="Email *" class="form__input" required>
+                <span class="form__errore" id="errore-email"></span>
+              </div>
+              <div class="form__gruppo">
+                <input type="tel" id="telefono" name="telefono" placeholder="Telefono" class="form__input">
+                <span class="form__errore" id="errore-telefono"></span>
+              </div>
+              <div class="form__gruppo">
+                <select id="servizio" name="servizio" class="form__input form__select">
+                  <option value="">Servizio di interesse</option>
+                  <option value="edilizia-industriale">Edilizia Industriale</option>
+                  <option value="edilizia-privata">Edilizia Privata</option>
+                  <option value="opere-stradali">Opere Stradali</option>
+                  <option value="movimento-terra">Movimento Terra</option>
+                  <option value="trasporti">Trasporti e Logistica</option>
+                  <option value="ambiente">Ambiente</option>
+                  <option value="sollevamenti">Sollevamenti</option>
+                  <option value="consulenza">Consulenza</option>
+                  <option value="altro">Altro</option>
+                </select>
+              </div>
+              <div class="form__gruppo">
+                <textarea id="messaggio" name="messaggio" placeholder="Messaggio * (min. 20 caratteri)" class="form__input form__textarea" required></textarea>
+                <span class="form__errore" id="errore-messaggio"></span>
+              </div>
+              <button type="submit" class="form__submit">Invia Richiesta</button>
+            </form>
+            <!-- Messaggio di conferma (nascosto di default) -->
+            <div class="form__conferma" id="form-conferma">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>
+              <p>Grazie! La tua richiesta è stata inviata.<br>Ti contatteremo entro 24 ore.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <!-- Colonna 1: Logo e tagline -->
+        <div class="footer__col">
+          <img src="asset/images/loghi/logo-cover-footer.png" alt="CO.VER srl" class="footer__logo">
+          <p class="footer__tagline">Edilizia · Trasporti · Ambiente</p>
+          <p class="footer__indirizzo">Via Gran Bretagna, 18<br>81055 Santa Maria Capua Vetere (CE)</p>
+        </div>
+
+        <!-- Colonna 2: Link rapidi -->
+        <div class="footer__col">
+          <h4 class="footer__titolo-col">Link Rapidi</h4>
+          <ul class="footer__links">
+            <li><a href="#home" class="footer__link">Home</a></li>
+            <li><a href="#azienda" class="footer__link">Chi Siamo</a></li>
+            <li><a href="azienda.html" class="footer__link">Storia</a></li>
+            <li><a href="#servizi" class="footer__link">Servizi</a></li>
+            <li><a href="#galleria" class="footer__link">Galleria Lavori</a></li>
+            <li><a href="automezzi.html" class="footer__link">Automezzi</a></li>
+            <li><a href="#partner" class="footer__link">Partner</a></li>
+            <li><a href="#contatti" class="footer__link">Contatti</a></li>
+          </ul>
+        </div>
+
+        <!-- Colonna 3: Social e contatti rapidi -->
+        <div class="footer__col">
+          <h4 class="footer__titolo-col">Seguici</h4>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+          <div class="footer__contatti-rapidi">
+            <p>Tel: 0823 704255</p>
+            <p>Cell: 335 7552975</p>
+            <p>verrengiacover@covercostruzioni.it</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer__copyright">
+      <div class="container">
+        <p>© 2025 CO.VER srl — Tutti i diritti riservati | P.IVA: inserire partita iva</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

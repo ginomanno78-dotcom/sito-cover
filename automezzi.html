@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CO.VER srl — Parco Automezzi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR: copia identica di index.html -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <ul class="navbar__menu" id="navMenu">
+        <li class="navbar__item">
+          <a href="index.html#home" class="navbar__link">Home</a>
+        </li>
+        <li class="navbar__item">
+          <div class="navbar__group">
+            <a href="index.html#azienda" class="navbar__link">Azienda</a>
+            <button class="navbar__toggle" aria-label="Apri sottomenu Azienda">▾</button>
+          </div>
+          <ul class="navbar__dropdown">
+            <li><a href="azienda.html" class="navbar__dropdown-link">Storia</a></li>
+          </ul>
+        </li>
+        <li class="navbar__item">
+          <div class="navbar__group">
+            <a href="index.html#servizi" class="navbar__link">Servizi</a>
+            <button type="button" class="navbar__toggle" aria-label="Apri sottomenu">▾</button>
+          </div>
+          <ul class="navbar__dropdown">
+            <li><a href="edilizia.html" class="navbar__dropdown-link">Edilizia</a></li>
+            <li><a href="trasporti.html" class="navbar__dropdown-link">Trasporti e Logistica</a></li>
+            <li><a href="ambiente.html" class="navbar__dropdown-link">Ambiente</a></li>
+            <li><a href="consulenza.html" class="navbar__dropdown-link">Consulenza</a></li>
+          </ul>
+        </li>
+        <li class="navbar__item">
+          <div class="navbar__group">
+            <a href="index.html#galleria" class="navbar__link">Galleria Lavori</a>
+            <button type="button" class="navbar__toggle" aria-label="Apri sottomenu">▾</button>
+          </div>
+          <ul class="navbar__dropdown">
+            <li><a href="galleria-industriali.html" class="navbar__dropdown-link">Lavori Industriali</a></li>
+            <li><a href="galleria-infrastrutture.html" class="navbar__dropdown-link">Infrastrutture</a></li>
+            <li><a href="galleria-residenziali.html" class="navbar__dropdown-link">Lavori Residenziali</a></li>
+          </ul>
+        </li>
+        <li class="navbar__item">
+          <a href="automezzi.html" class="navbar__link">Automezzi</a>
+        </li>
+        <li class="navbar__item">
+          <a href="index.html#partner" class="navbar__link">Partner</a>
+        </li>
+        <li class="navbar__item">
+          <a href="index.html#contatti" class="navbar__link">Contatti</a>
+        </li>
+      </ul>
+      <button type="button" class="navbar__hamburger" id="hamburgerBtn" aria-label="Apri menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="navbar__overlay" id="navOverlay" aria-hidden="true"></div>
+
+  <!-- HERO MINI -->
+  <div class="hero-mini">
+    <div class="hero-mini__slide" style="background-image: url('asset/images/hero-automezzi.jpg')"></div>
+    <div class="hero-mini__overlay"></div>
+    <div class="hero-mini__content">
+      <h1 class="hero-mini__titolo">Il Nostro Parco Automezzi</h1>
+      <p class="hero-mini__sub">Una flotta di oltre 40 mezzi sempre operativi</p>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="automezzi__intro">
+    <div class="container">
+      <h2 class="automezzi__intro-titolo">La Nostra Flotta</h2>
+      <div class="automezzi__divider"></div>
+      <p class="automezzi__intro-testo">
+        CO.VER srl dispone di un parco macchine moderno e costantemente aggiornato,
+        composto da oltre 40 automezzi tra escavatori, camion, gru e attrezzature specializzate.
+        Ogni mezzo è sottoposto a manutenzione periodica per garantire efficienza,
+        sicurezza e continuità operativa su ogni cantiere.
+      </p>
+    </div>
+  </div>
+
+  <!-- LISTA AUTOMEZZI -->
+  <div class="automezzi__sezione">
+    <div class="container">
+      <div class="automezzi__lista">
+
+      <!-- CATEGORIA 1: EDILIZIA -->
+      <div class="automezzi__categoria">
+        <h3 class="automezzi__cat-titolo">🏗️ Edilizia</h3>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="IVECO 140"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Autocarro IVECO 140</h3>
+          <p class="automezzo__desc">Autocarro con gru per sollevamento e trasporto materiali</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="IVECO 150"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Autocarro IVECO 150</h3>
+          <p class="automezzo__desc">Autocarro scarrabile per trasporto inerti e materiali</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="TURBO DAILY"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Autocarro TURBO DAILY 35/E4</h3>
+          <p class="automezzo__desc">Autocarro leggero per trasporti urbani e logistica</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="DUCATO"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Autocarro Fiat DUCATO PANORAMA</h3>
+          <p class="automezzo__desc">Veicolo commerciale per trasporto persone e materiali</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="RULLO SICOM"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Rullo SICOM</h3>
+          <p class="automezzo__desc">Rullo compattatore per pavimentazioni stradali</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="RULLO WACKER"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Rullo WACKER NEUSON RD18-80</h3>
+          <p class="automezzo__desc">Rullo tandem per compattazione asfalto e terreni</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="CMF175"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Vibrofinitrice CMF175</h3>
+          <p class="automezzo__desc">Finitrice per stesa asfalto su opere stradali</p>
+        </div>
+      </div>
+
+      <!-- CATEGORIA 2: MOVIMENTO TERRA -->
+      <div class="automezzi__categoria">
+        <h3 class="automezzi__cat-titolo">🚜 Movimento Terra</h3>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="JCB 1CX HF"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Mini Terna Gommata JCB 1CX HF-DW</h3>
+          <p class="automezzo__desc">Mini terna compatta per scavi in spazi ristretti</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="JCB 1CX THF"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Mini Terna Gommata JCB 1CX THF</h3>
+          <p class="automezzo__desc">Mini terna gommata per lavori di scavo versatili</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="PC 210"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Escavatore PC 210 NLC-8</h3>
+          <p class="automezzo__desc">Escavatore cingolato medio per scavi e demolizioni</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="PC15"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Escavatore PC15</h3>
+          <p class="automezzo__desc">Miniescavatore per lavori in aree urbane ristrette</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="JCB 140X"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Escavatore JCB 140X</h3>
+          <p class="automezzo__desc">Escavatore cingolato per scavi stradali e fondazioni</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="JCB 55Z"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Escavatore JCB 55Z</h3>
+          <p class="automezzo__desc">Escavatore compatto a zero sbalzo per spazi ridotti</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="NEUSON ET90"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Escavatore NEUSON ET 90</h3>
+          <p class="automezzo__desc">Escavatore cingolato per movimenti terra intensivi</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="JCB 8035"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Escavatore JCB 8035 ZTS</h3>
+          <p class="automezzo__desc">Miniescavatore a sbalzo zero per cantieri urbani</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="EZ17"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Mini Escavatore EZ17 WACKER NEUSON</h3>
+          <p class="automezzo__desc">Miniescavatore leggero per lavori di precisione</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="PALA FL10"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Pala Cingolata FL10</h3>
+          <p class="automezzo__desc">Pala cingolata per movimentazione terra e inerti</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="JCB 270T"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Mini Pala JCB 270T T4</h3>
+          <p class="automezzo__desc">Minipala cingolata compatta per cantieri ristretti</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="DW15e"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Compact Dumper DW15e WACKER NEUSON</h3>
+          <p class="automezzo__desc">Dumper compatto elettrico per trasporto materiali</p>
+        </div>
+      </div>
+
+      <!-- CATEGORIA 3: TRASPORTI -->
+      <div class="automezzi__categoria">
+        <h3 class="automezzi__cat-titolo">🚛 Trasporti</h3>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="MAN"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Trattore Stradale MAN</h3>
+          <p class="automezzo__desc">Trattore per traino semirimorchi su lunghe percorrenze</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="DAF 1"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Trattore Stradale DAF</h3>
+          <p class="automezzo__desc">Trattore stradale per trasporto pesante e logistica</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="DAF 2"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Trattore Stradale DAF</h3>
+          <p class="automezzo__desc">Trattore stradale per trasporto pesante e logistica</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="DAF 3"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Trattore Stradale DAF</h3>
+          <p class="automezzo__desc">Trattore stradale per trasporto pesante e logistica</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="DE ANGELIS"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Semirimorchio DE ANGELIS</h3>
+          <p class="automezzo__desc">Semirimorchio per trasporto merci su strada</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="SCHMITZ 1"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Semirimorchio Centina SCHMITZ CARGOBULL</h3>
+          <p class="automezzo__desc">Semirimorchio centinato Bartoli per carichi voluminosi</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="SCHMITZ 2"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Semirimorchio Centina SCHMITZ CARGOBULL</h3>
+          <p class="automezzo__desc">Semirimorchio centinato Bartoli per carichi voluminosi</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="SCHMITZ VASCA 1"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Semirimorchio Vasca SCHMITZ CARGOBULL</h3>
+          <p class="automezzo__desc">Semirimorchio a vasca per trasporto rifiuti e inerti</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="SCHMITZ VASCA 2"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Semirimorchio Vasca SCHMITZ CARGOBULL</h3>
+          <p class="automezzo__desc">Semirimorchio a vasca per trasporto rifiuti e inerti</p>
+        </div>
+      </div>
+
+      <!-- CATEGORIA 4: SOLLEVAMENTI -->
+      <div class="automezzi__categoria">
+        <h3 class="automezzi__cat-titolo">🏗️ Sollevamenti</h3>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="LINDE H25D"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Carrello Elevatore LINDE H25D</h3>
+          <p class="automezzo__desc">Carrello elevatore diesel per magazzino e cantiere</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="YALE ERP30"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Muletto YALE ERP30VL</h3>
+          <p class="automezzo__desc">Muletto elettrico per movimentazione interna materiali</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="YALE ERP30 861"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Muletto Elettrico YALE ERP30VL-861</h3>
+          <p class="automezzo__desc">Muletto elettrico compatto per spazi operativi ridotti</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="DIECI 50.21"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Sollevatore Telescopico DIECI PEGASUS 50.21</h3>
+          <p class="automezzo__desc">Sollevatore telescopico per carichi in quota</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="DIECI 60.21"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Sollevatore Telescopico DIECI PEGASUS 60.21 ST.4</h3>
+          <p class="automezzo__desc">Sollevatore telescopico ad alta portata e raggiunta</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="TEREX RT1045L"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Autogrù TEREX RT1045L</h3>
+          <p class="automezzo__desc">Autogrù tutto terreno per sollevamenti in cantiere</p>
+        </div>
+      </div>
+
+      <div class="automezzo">
+        <div class="automezzo__thumb img-placeholder" data-label="IMER GROUP"></div>
+        <div class="automezzo__info">
+          <h3 class="automezzo__nome">Piattaforma Mobile Elevabile IMER GROUP</h3>
+          <p class="automezzo__desc">Piattaforma aerea per lavori in quota e manutenzioni</p>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER: copia identica di index.html -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div class="footer__col">
+          <img src="asset/images/loghi/logo-cover-footer.png" alt="CO.VER srl" class="footer__logo">
+          <p class="footer__tagline">Edilizia · Trasporti · Ambiente</p>
+          <p class="footer__indirizzo">Via Gran Bretagna, 18<br>81055 Santa Maria Capua Vetere (CE)</p>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__titolo-col">Link Rapidi</h4>
+          <ul class="footer__links">
+            <li><a href="index.html#home" class="footer__link">Home</a></li>
+            <li><a href="azienda.html" class="footer__link">Azienda</a></li>
+            <li><a href="index.html#servizi" class="footer__link">Servizi</a></li>
+            <li><a href="index.html#galleria" class="footer__link">Galleria Lavori</a></li>
+            <li><a href="automezzi.html" class="footer__link">Automezzi</a></li>
+            <li><a href="index.html#partner" class="footer__link">Partner</a></li>
+            <li><a href="index.html#contatti" class="footer__link">Contatti</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__titolo-col">Seguici</h4>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+          <div class="footer__contatti-rapidi">
+            <p>Tel: 0823 704255</p>
+            <p>Cell: 335 7552975</p>
+            <p>verrengiacover@covercostruzioni.it</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer__copyright">
+      <div class="container">
+        <p>© 2025 CO.VER srl — Tutti i diritti riservati | P.IVA: inserire partita iva</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
