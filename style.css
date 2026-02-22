@@ -536,26 +536,31 @@ p {
 }
 
 .hero__logo {
+  width: 55vw;
   max-width: 780px;
-  width: 90%;
+  min-width: 240px;
   height: auto;
   display: block;
   margin-bottom: 4px;
 }
 
-/* Testo dinamico per slide */
+.hero__title {
+  font-size: clamp(3rem, 13vw, 7rem);
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
 .hero__slide-text {
   font-family: var(--font-title);
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: clamp(1.2rem, 4vw, 2.5rem);
   font-weight: 700;
   color: var(--color-white);
   letter-spacing: 0.25em;
   text-transform: uppercase;
+  text-shadow: 2px 2px 0 rgb(0,0,0);
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.8s ease forwards;
-  /* Ombra netta 45° 2px, grigio 75% — solo per Edilizia / Ambiente / Trasporti */
-  text-shadow: 2px 2px 0 rgb(0, 0, 0);
 }
 
 @keyframes fadeInUp {
@@ -580,10 +585,11 @@ p {
 
 .hero__sub2 {
   font-family: var(--font-body);
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: clamp(0.78rem, 1.6vw, 1.1rem);
   color: var(--color-white);
   opacity: 0.85;
-  max-width: 640px;
+  max-width: 50vw;
+  min-width: 280px;
   line-height: 1.7;
   text-align: center;
   text-shadow: 1px 1px 0 #000;
@@ -660,10 +666,6 @@ p {
 
 /* Hero responsive mobile */
 @media (max-width: 767px) {
-  .hero__logo {
-    max-width: 280px;
-  }
-
   .hero__cta {
     flex-direction: column;
     align-items: center;
@@ -673,27 +675,6 @@ p {
     width: 100%;
     max-width: 300px;
     text-align: center;
-  }
-}
-
-@media (max-width: 767px) {
-  .hero__sub2 {
-    font-size: 0.95rem;
-    max-width: 100%;
-    padding: 0 16px;
-    white-space: normal;
-  }
-
-  .hero__sub2 br {
-    display: block;
-    content: '';
-  }
-}
-
-@media (max-width: 480px) {
-  .hero__sub2 {
-    font-size: 0.85rem;
-    letter-spacing: -0.01em;
   }
 }
 
