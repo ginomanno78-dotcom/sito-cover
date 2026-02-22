@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CO.VER srl — Edilizia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="asset/images/favicon.svg">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html#home" class="navbar__brand">
+        <img src="asset/images/loghi/logo-cover-footer.png" alt="CO.VER srl" class="navbar__brand-logo">
+      </a>
+      <ul class="navbar__menu" id="navMenu">
+        <li class="navbar__item">
+          <a href="index.html#home" class="navbar__link">Home</a>
+        </li>
+        <li class="navbar__item">
+          <div class="navbar__group">
+            <a href="index.html#azienda" class="navbar__link">Azienda</a>
+            <button class="navbar__toggle" aria-label="Apri sottomenu Azienda">▾</button>
+          </div>
+          <ul class="navbar__dropdown">
+            <li><a href="azienda.html" class="navbar__dropdown-link">Storia</a></li>
+          </ul>
+        </li>
+        <li class="navbar__item">
+          <div class="navbar__group">
+            <a href="index.html#servizi" class="navbar__link">Servizi</a>
+            <button type="button" class="navbar__toggle" aria-label="Apri sottomenu">▾</button>
+          </div>
+          <ul class="navbar__dropdown">
+            <li><a href="edilizia.html" class="navbar__dropdown-link">Edilizia</a></li>
+            <li><a href="trasporti.html" class="navbar__dropdown-link">Trasporti e Logistica</a></li>
+            <li><a href="ambiente.html" class="navbar__dropdown-link">Ambiente</a></li>
+            <li><a href="consulenza.html" class="navbar__dropdown-link">Consulenza</a></li>
+          </ul>
+        </li>
+        <li class="navbar__item">
+          <div class="navbar__group">
+            <a href="index.html#galleria" class="navbar__link">Galleria Lavori</a>
+            <button type="button" class="navbar__toggle" aria-label="Apri sottomenu">▾</button>
+          </div>
+          <ul class="navbar__dropdown">
+            <li><a href="galleria-industriali.html" class="navbar__dropdown-link">Lavori Industriali</a></li>
+            <li><a href="galleria-infrastrutture.html" class="navbar__dropdown-link">Infrastrutture</a></li>
+            <li><a href="galleria-residenziali.html" class="navbar__dropdown-link">Lavori Residenziali</a></li>
+          </ul>
+        </li>
+        <li class="navbar__item">
+          <a href="automezzi.html" class="navbar__link">Automezzi</a>
+        </li>
+        <li class="navbar__item">
+          <a href="index.html#partner" class="navbar__link">Partner</a>
+        </li>
+        <li class="navbar__item">
+          <a href="index.html#contatti" class="navbar__link">Contatti</a>
+        </li>
+      </ul>
+      <button type="button" class="navbar__hamburger" id="hamburgerBtn" aria-label="Apri menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="navbar__overlay" id="navOverlay" aria-hidden="true"></div>
+
+  <!-- HERO MINI -->
+  <div class="hero-mini">
+    <div class="hero-mini__slide" style="background-image: url('asset/images/hero-1.jpg')"></div>
+    <div class="hero-mini__overlay"></div>
+    <div class="hero-mini__content">
+      <h1 class="hero-mini__titolo">Edilizia</h1>
+      <p class="hero-mini__sub">Industriale · Residenziale · Stradale · Movimento Terra · Sollevamenti</p>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section class="edilizia-intro">
+    <div class="container">
+      <p class="edilizia-intro__testo">Adattandosi alle esigenze di mercato la CO.VER. srl ha sviluppato al proprio interno un know how ed una struttura capace di operare in diversi settori, applicando le proprie competenze in: Edilizia Industriale, Edilizia Privata, Opere Stradali, Movimento Terra e Sollevamenti.</p>
+      <p class="edilizia-intro__nota">La CO.VER. srl svolge tutti i lavori prestando massima attenzione alla sicurezza in cantiere e ai materiali di costruzione.</p>
+    </div>
+  </section>
+
+  <!-- INDUSTRIALE -->
+  <section class="edilizia-sez" id="industriale">
+    <div class="container">
+      <div class="edilizia-sez__grid">
+        <div class="edilizia-sez__foto">
+          <img src="asset/images/foto-cet-napoli/foto-1-napoli-L.jpg" alt="Edilizia Industriale" loading="lazy">
+        </div>
+        <div class="edilizia-sez__testo">
+          <h2>Edilizia Industriale</h2>
+          <div class="edilizia-sez__divider"></div>
+          <p>La CO.VER. srl opera nel settore industriale sin dal primo anno di attività. La competenza, il rispetto delle tempistiche di esecuzione, la capacità di operare senza intralciare l'attività del cliente e la qualità di esecuzione sono le garanzie che l'azienda offre in questo delicato settore.</p>
+          <a href="galleria-industriali.html" class="edilizia-sez__cta">Vedi Gallery →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESIDENZIALE -->
+  <section class="edilizia-sez edilizia-sez--alt" id="residenziale">
+    <div class="container">
+      <div class="edilizia-sez__grid">
+        <div class="edilizia-sez__foto">
+          <img src="asset/images/foto-resid-sparanise/vista3.jpg" alt="Edilizia Residenziale" loading="lazy">
+        </div>
+        <div class="edilizia-sez__testo">
+          <h2>Edilizia Residenziale</h2>
+          <div class="edilizia-sez__divider"></div>
+          <p>La CO.VER. srl dedica una parte della sua attività anche nell'edilizia privata concentrandosi su ristrutturazioni interne e facciate esterne di fabbricati, avvalendosi di partner come ENI PLENITUDE per l'agevolazione fiscale superbonus 110%. L'impresa viene scelta per la sua sensibilità alla risoluzione di ogni problematica costruttiva.</p>
+          <a href="galleria-residenziali.html" class="edilizia-sez__cta">Vedi Gallery →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRADALE -->
+  <section class="edilizia-sez" id="stradale">
+    <div class="container">
+      <div class="edilizia-sez__grid">
+        <div class="edilizia-sez__foto">
+          <img src="asset/images/foto-cet-sparanise/foto-sparanise-11.jpg" alt="Opere Stradali" loading="lazy">
+        </div>
+        <div class="edilizia-sez__testo">
+          <h2>Opere Stradali</h2>
+          <div class="edilizia-sez__divider"></div>
+          <p>L'esecuzione di opere stradali da parte della CO.VER. srl si concretizza sia con la realizzazione per l'ampliamento o la manutenzione della viabilità esistente, che con la costruzione di nuovi corpi stradali nell'ambito industriale e con gli appalti pubblici.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOVIMENTO TERRA -->
+  <section class="edilizia-sez edilizia-sez--alt" id="movimento-terra">
+    <div class="container">
+      <div class="edilizia-sez__grid">
+        <div class="edilizia-sez__foto">
+          <img src="asset/images/foto-cet-sparanise/foto-sparanise-1.jpg" alt="Movimento Terra" loading="lazy">
+        </div>
+        <div class="edilizia-sez__testo">
+          <h2>Movimento Terra</h2>
+          <div class="edilizia-sez__divider"></div>
+          <p>I settori in cui si muove la ditta CO.VER. srl sono molteplici tra questi sono presenti anche i settori delle demolizioni, delle movimentazioni terra e delle escavazioni per vari scopi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLLEVAMENTI -->
+  <section class="edilizia-sez" id="sollevamenti">
+    <div class="container">
+      <div class="edilizia-sez__grid">
+        <div class="edilizia-sez__foto">
+          <img src="asset/images/foto-cet-sparanise/foto-sollevamenti.jpg" alt="Sollevamenti" loading="lazy">
+        </div>
+        <div class="edilizia-sez__testo">
+          <h2>Sollevamenti</h2>
+          <div class="edilizia-sez__divider"></div>
+          <p>La CO.VER. srl con passione e dedizione si è specializzata negli ultimi anni nel servizio del sollevamento con attrezzature all'avanguardia, attraverso il proprio personale qualificato e di altissima professionalità. Qualsiasi tipo di sollevamento può oggi essere risolto con grande efficienza e in totale sicurezza.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINALE -->
+  <section class="edilizia-cta">
+    <div class="container">
+      <h2>Hai un progetto in mente?</h2>
+      <p>Contattaci per un preventivo gratuito e senza impegno.</p>
+      <a href="index.html#contatti" class="edilizia-cta__btn">Richiedi un Preventivo</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div class="footer__col">
+          <img src="asset/images/loghi/logo-cover-footer.png" alt="CO.VER srl" class="footer__logo">
+          <p class="footer__tagline">Edilizia · Trasporti · Ambiente</p>
+          <p class="footer__indirizzo">Via Gran Bretagna, 18<br>81055 Santa Maria Capua Vetere (CE)</p>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__titolo-col">Link Rapidi</h4>
+          <ul class="footer__links">
+            <li><a href="index.html#home" class="footer__link">Home</a></li>
+            <li><a href="azienda.html" class="footer__link">Azienda</a></li>
+            <li><a href="index.html#servizi" class="footer__link">Servizi</a></li>
+            <li><a href="index.html#galleria" class="footer__link">Galleria Lavori</a></li>
+            <li><a href="automezzi.html" class="footer__link">Automezzi</a></li>
+            <li><a href="index.html#partner" class="footer__link">Partner</a></li>
+            <li><a href="index.html#contatti" class="footer__link">Contatti</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__titolo-col">Seguici</h4>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+          <div class="footer__contatti-rapidi">
+            <p>Tel: 0823 704255</p>
+            <p>Cell: 335 7552975</p>
+            <p>verrengiacover@covercostruzioni.it</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer__copyright">
+      <div class="container">
+        <p>© 2025 CO.VER srl — Tutti i diritti riservati | P.IVA: inserire partita iva</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
