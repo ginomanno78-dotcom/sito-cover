@@ -922,7 +922,7 @@ p {
 .servizi__card-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -931,8 +931,10 @@ p {
 .servizi__card-overlay .servizi__card-titolo {
   color: var(--color-white);
   margin-bottom: 0;
-  font-size: calc(1.1rem + 3px);
+  font-size: calc(1.1rem + 5px);
   letter-spacing: 0.12em;
+  text-align: center;
+  text-shadow: 2px 2px 0 #000;
 }
 
 .servizi__card-sub {
@@ -943,6 +945,7 @@ p {
   text-transform: uppercase;
   margin-bottom: 10px;
   opacity: 0.8;
+  text-align: center;
 }
 
 .servizi__card-body {
@@ -967,6 +970,10 @@ p {
   line-height: 1.65;
   flex-grow: 1;
   margin-bottom: 16px;
+}
+
+.servizi__card-body:has(.servizi__card-sub) .servizi__card-testo {
+  text-align: justify;
 }
 
 .servizi__card-cta {
@@ -2383,73 +2390,92 @@ p {
   background-color: var(--color-light-bg);
 }
 
-.edilizia-sez__grid {
+.edilizia-aree {
+  background-color: var(--color-light-bg);
+  padding: 70px 0;
+}
+
+.edilizia-aree__grid {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 36px;
-  align-items: start;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px 60px;
 }
 
-.edilizia-sez__grid--rev {
-  direction: ltr;
+.edilizia-area {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.edilizia-sez__testo h2 {
-  font-family: var(--font-title);
-  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-  font-weight: 700;
-  color: var(--color-primary);
+.edilizia-area__header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   margin-bottom: 12px;
 }
 
-.edilizia-sez__divider {
-  width: 40px;
-  height: 3px;
-  background-color: var(--color-primary);
-  margin-bottom: 18px;
+.edilizia-area__icona {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
-.edilizia-sez__testo p {
+.edilizia-area__titolo {
+  font-family: var(--font-title);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0;
+}
+
+.edilizia-area__divider {
+  width: 36px;
+  height: 3px;
+  background-color: var(--color-primary);
+  margin-bottom: 14px;
+}
+
+.edilizia-area__testo {
   font-family: var(--font-body);
   font-size: 0.92rem;
   line-height: 1.8;
   color: var(--color-gray);
-  text-align: left;
+  text-align: justify;
+  margin-bottom: 16px;
+  flex-grow: 1;
 }
 
-.edilizia-sez__foto {
-  position: relative;
-  display: block;
-  border-radius: 6px;
-  overflow: hidden;
-  border: 1px solid #282855;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+.edilizia-area__cta {
+  display: inline-block;
+  padding: 8px 18px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
   text-decoration: none;
-  width: 280px;
-  height: 200px;
-  aspect-ratio: unset;
-  flex-shrink: 0;
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  transition: background-color var(--transition), transform var(--transition);
 }
 
-.edilizia-sez__foto img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
+.edilizia-area__cta:hover {
+  background-color: var(--color-accent);
+  transform: translateY(-2px);
 }
 
-.edilizia-sez__foto:hover img {
-  transform: scale(1.04);
-}
-
-.edilizia-sez__foto--placeholder {
-  background-color: #cccccc;
-}
-
-.edilizia-sez__foto--placeholder .img-placeholder {
-  height: 100%;
-  min-height: 260px;
+@media (max-width: 767px) {
+  .edilizia-aree__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .edilizia-area__icona {
+    width: 64px;
+    height: 64px;
+  }
 }
 
 /* CTA finale */
@@ -2496,35 +2522,8 @@ p {
   transform: translateY(-2px);
 }
 
-.edilizia-sez__cta {
-  display: inline-block;
-  margin-top: 16px;
-  padding: 9px 20px;
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  text-decoration: none;
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  border-radius: 3px;
-  transition: background-color var(--transition), transform var(--transition);
-}
-
-.edilizia-sez__cta:hover {
-  background-color: var(--color-accent);
-  transform: translateY(-2px);
-}
-
 /* Responsive edilizia */
 @media (max-width: 1023px) {
-  .edilizia-sez__grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  .edilizia-sez__grid--rev {
-    direction: ltr;
-  }
 }
 
 @media (max-width: 767px) {
