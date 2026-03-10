@@ -363,24 +363,42 @@
                 <p class="fv-intro__testo">Riprese dai cantieri e timelapse dei nostri interventi.</p>
             </div>
             <div class="fv-video-grid">
-                <!--
-          Per aggiungere un video YouTube incollare questo blocco:
-          <div class="fv-video__item">
-            <div class="fv-video__wrapper">
-              <iframe
-                src="https://www.youtube.com/embed/ID_VIDEO"
-                title="Descrizione video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen loading="lazy">
-              </iframe>
-            </div>
-            <p class="fv-video__caption">Titolo del video</p>
-          </div>
-        -->
-                <p class="fv-video__placeholder">Video in arrivo.</p>
-            </div>
-        </section>
 
+            <!-- Video 1: orizzontale -->
+            <div class="fv-video__item">
+              <div class="fv-video__facade" data-videoid="8sdRiRfQ5hA">
+                <img src="https://img.youtube.com/vi/8sdRiRfQ5hA/maxresdefault.jpg" alt="Demolizione torre piezometrica Prysmian" class="fv-video__thumb" loading="lazy">
+                <button class="fv-video__play" aria-label="Riproduci video">
+                  <svg viewBox="0 0 68 48" width="68" height="48"><path class="fv-play__bg" d="M66.5 7.7c-.8-2.9-3-5.2-5.9-6C55.8.1 34 0 34 0S12.2.1 7.4 1.7C4.5 2.5 2.3 4.8 1.5 7.7 0 12.5 0 24 0 24s0 11.5 1.5 16.3c.8 2.9 3 5.2 5.9 6C12.2 47.9 34 48 34 48s21.8-.1 26.6-1.7c2.9-.8 5.1-3.1 5.9-6C68 35.5 68 24 68 24s0-11.5-1.5-16.3z"/><path class="fv-play__arrow" d="M45 24 27 14v20"/></svg>
+                </button>
+              </div>
+              <p class="fv-video__caption">Demolizione torre piezometrica Prysmian</p>
+            </div>
+
+            <!-- Video 2: orizzontale -->
+            <div class="fv-video__item">
+              <div class="fv-video__facade" data-videoid="OOhy04DFfLE">
+                <img src="https://img.youtube.com/vi/OOhy04DFfLE/maxresdefault.jpg" alt="Cantieri CO.VER srl" class="fv-video__thumb" loading="lazy">
+                <button class="fv-video__play" aria-label="Riproduci video">
+                  <svg viewBox="0 0 68 48" width="68" height="48"><path class="fv-play__bg" d="M66.5 7.7c-.8-2.9-3-5.2-5.9-6C55.8.1 34 0 34 0S12.2.1 7.4 1.7C4.5 2.5 2.3 4.8 1.5 7.7 0 12.5 0 24 0 24s0 11.5 1.5 16.3c.8 2.9 3 5.2 5.9 6C12.2 47.9 34 48 34 48s21.8-.1 26.6-1.7c2.9-.8 5.1-3.1 5.9-6C68 35.5 68 24 68 24s0-11.5-1.5-16.3z"/><path class="fv-play__arrow" d="M45 24 27 14v20"/></svg>
+                </button>
+              </div>
+              <p class="fv-video__caption">Cantieri CO.VER srl</p>
+            </div>
+
+            <!-- Video 3: Short verticale -->
+            <div class="fv-video__item fv-video__item--vertical">
+              <div class="fv-video__facade fv-video__facade--vertical" data-videoid="0ZwvozzNC9U">
+                <img src="https://img.youtube.com/vi/0ZwvozzNC9U/hqdefault.jpg" alt="Time-lapse cantiere CO.VER srl" class="fv-video__thumb" loading="lazy">
+                <button class="fv-video__play" aria-label="Riproduci video">
+                  <svg viewBox="0 0 68 48" width="68" height="48"><path class="fv-play__bg" d="M66.5 7.7c-.8-2.9-3-5.2-5.9-6C55.8.1 34 0 34 0S12.2.1 7.4 1.7C4.5 2.5 2.3 4.8 1.5 7.7 0 12.5 0 24 0 24s0 11.5 1.5 16.3c.8 2.9 3 5.2 5.9 6C12.2 47.9 34 48 34 48s21.8-.1 26.6-1.7c2.9-.8 5.1-3.1 5.9-6C68 35.5 68 24 68 24s0-11.5-1.5-16.3z"/><path class="fv-play__arrow" d="M45 24 27 14v20"/></svg>
+                </button>
+              </div>
+              <p class="fv-video__caption">Time-lapse cantiere</p>
+            </div>
+
+          </div>
+        </section>
     </main>
 
     <!-- LIGHTBOX -->
@@ -539,6 +557,22 @@
 
         });
     </script>
+  <script>
+    /* YouTube Facade — carica iframe solo al click */
+    document.querySelectorAll('.fv-video__facade').forEach(function(facade) {
+      facade.addEventListener('click', function() {
+        const id = this.dataset.videoid;
+        const iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0';
+        iframe.title = 'Video CO.VER srl';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        iframe.allowFullscreen = true;
+        iframe.style.cssText = 'width:100%;height:100%;border:none;position:absolute;top:0;left:0;';
+        this.innerHTML = '';
+        this.appendChild(iframe);
+        this.style.cursor = 'default';
+      });
+    });
+  </script>
 </body>
-
 </html>
