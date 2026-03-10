@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foto e Video — CO.VER srl</title>
+    <meta name="description"
+        content="Galleria fotografica e video dei cantieri e dei lavori realizzati da CO.VER srl — Edilizia, Trasporti, Ambiente.">
+    <meta property="og:title" content="Foto e Video — CO.VER srl">
+    <meta property="og:description" content="Scopri il lavoro di CO.VER srl attraverso foto e video dei cantieri.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Stili gallery e lightbox — inline per sicurezza */
+        .fv-section {
+            padding: 72px 0 80px;
+            background: #fff
+        }
+
+        .fv-section--alt {
+            background: #f5f6f8
+        }
+
+        .fv-intro {
+            text-align: center;
+            margin-bottom: 48px;
+            padding: 0 1rem
+        }
+
+        .fv-intro__titolo {
+            font-family: var(--font-title, "Jost", sans-serif);
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-weight: 700;
+            color: var(--color-primary, #1a2340);
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            margin-bottom: 12px
+        }
+
+        .fv-intro__divider {
+            width: 56px;
+            height: 3px;
+            background: var(--color-accent, #e8500a);
+            margin: 0 auto 20px
+        }
+
+        .fv-intro__testo {
+            font-size: .95rem;
+            color: var(--color-gray, #555);
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.7
+        }
+
+        .fv-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 10px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem 4rem
+        }
+
+        .fv-gallery__item {
+            cursor: pointer;
+            overflow: hidden;
+            transition: opacity .25s, transform .25s
+        }
+
+        .fv-gallery__item:hover {
+            opacity: .95;
+            transform: scale(1.03)
+        }
+
+        .fv-gallery__item img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            display: block
+        }
+
+        .fv-video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem 4rem
+        }
+
+        .fv-video__placeholder {
+            font-style: italic;
+            color: var(--color-gray, #555);
+            grid-column: 1/-1;
+            text-align: center;
+            padding: 0 0 2rem
+        }
+
+        .fv-lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px
+        }
+
+        .fv-lightbox--open {
+            display: flex
+        }
+
+        .fv-lightbox__backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, .92);
+            cursor: pointer
+        }
+
+        .fv-lightbox__close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 9002;
+            width: 48px;
+            height: 48px;
+            padding: 0;
+            border: none;
+            background: rgba(255, 255, 255, .15);
+            color: #fff;
+            font-size: 22px;
+            line-height: 1;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background .2s
+        }
+
+        .fv-lightbox__close:hover {
+            background: rgba(255, 255, 255, .35)
+        }
+
+        .fv-lightbox__content {
+            position: relative;
+            z-index: 9001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            max-width: 95vw;
+            max-height: 90vh
+        }
+
+        .fv-lightbox__img {
+            max-width: 85vw;
+            max-height: 85vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            box-shadow: 0 0 50px rgba(0, 0, 0, .6);
+            border: 10px solid #fff;
+            box-sizing: border-box;
+            display: block
+        }
+
+        .fv-lightbox__prev,
+        .fv-lightbox__next {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            padding: 0;
+            border: none;
+            background: rgba(255, 255, 255, .15);
+            color: #fff;
+            font-size: 28px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background .2s;
+            line-height: 1
+        }
+
+        .fv-lightbox__prev:hover,
+        .fv-lightbox__next:hover {
+            background: rgba(255, 255, 255, .35)
+        }
+
+        @media(max-width:767px) {
+            .fv-section {
+                padding: 56px 0 60px
+            }
+
+            .fv-video-grid {
+                grid-template-columns: 1fr
+            }
+        }
+
+        @media(max-width:479px) {
+            .fv-gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 6px
+            }
+
+            .fv-lightbox__img {
+                border-width: 5px
+            }
+
+            .fv-lightbox__prev,
+            .fv-lightbox__next {
+                width: 36px;
+                height: 36px;
+                font-size: 22px
+            }
+        }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="asset/images/favicon.svg">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar__inner">
+            <a href="index.html" class="navbar__brand">
+                <img src="asset/images/loghi/logo-cover-footer.png" alt="CO.VER srl" class="navbar__brand-logo">
+            </a>
+            <ul class="navbar__menu" id="navMenu">
+                <li class="navbar__item">
+                    <a href="index.html#home" class="navbar__link">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="index.html#azienda" class="navbar__link">Azienda</a>
+                </li>
+                <li class="navbar__item">
+                    <div class="navbar__group">
+                        <a href="index.html#servizi" class="navbar__link">Servizi</a>
+                        <button type="button" class="navbar__toggle" aria-label="Apri sottomenu">▾</button>
+                    </div>
+                    <ul class="navbar__dropdown">
+                        <li><a href="edilizia.html" class="navbar__dropdown-link">Edilizia</a></li>
+                        <li><a href="trasporti.html" class="navbar__dropdown-link">Trasporti e Logistica</a></li>
+                        <li><a href="ambiente.html" class="navbar__dropdown-link">Ambiente</a></li>
+                    </ul>
+                </li>
+                <li class="navbar__item">
+                    <div class="navbar__group">
+                        <a href="index.html#galleria" class="navbar__link">Galleria Lavori</a>
+                        <button type="button" class="navbar__toggle" aria-label="Apri sottomenu">▾</button>
+                    </div>
+                    <ul class="navbar__dropdown">
+                        <li><a href="galleria-industriali.html" class="navbar__dropdown-link">Lavori Industriali</a>
+                        </li>
+                        <li><a href="galleria-infrastrutture.html" class="navbar__dropdown-link">Infrastrutture</a></li>
+                        <li><a href="galleria-residenziali.html" class="navbar__dropdown-link">Lavori Residenziali</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="navbar__item">
+                    <a href="foto-video.html" class="navbar__link">Foto e Video</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="automezzi.html" class="navbar__link">Automezzi</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="index.html#partner" class="navbar__link">Partner</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="index.html#contatti" class="navbar__link">Contatti</a>
+                </li>
+            </ul>
+            <button type="button" class="navbar__hamburger" id="hamburgerBtn" aria-label="Apri menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="navbar__overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <!-- MAIN -->
+    <main id="main">
+
+        <!-- HERO INTERNO -->
+        <section class="page-hero" style="background-image: url('asset/images/hero-1.jpg');">
+            <div class="page-hero__overlay"></div>
+            <div class="page-hero__content">
+                <h1 class="page-hero__titolo">Foto e Video</h1>
+                <p class="page-hero__sottotitolo">I nostri cantieri, i nostri lavori</p>
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="index.html" class="breadcrumb__link">Home</a>
+                    <span class="breadcrumb__sep">›</span>
+                    <span class="breadcrumb__current">Foto e Video</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- GALLERIA FOTOGRAFICA -->
+        <section class="fv-section">
+            <div class="fv-intro">
+                <h2 class="fv-intro__titolo">Galleria Fotografica</h2>
+                <div class="fv-intro__divider"></div>
+                <p class="fv-intro__testo">Una selezione di immagini dai nostri cantieri e interventi sul territorio.
+                </p>
+            </div>
+
+            <div class="fv-gallery" id="fvGallery">
+                <div class="fv-gallery__item" data-index="0">
+                    <img src="asset/images/foto-video/foto-1.webp" alt="Cantiere CO.VER 1" loading="lazy">
+                </div>
+                <div class="fv-gallery__item" data-index="1">
+                    <img src="asset/images/foto-video/foto-2.webp" alt="Cantiere CO.VER 2" loading="lazy">
+                </div>
+                <div class="fv-gallery__item" data-index="2">
+                    <img src="asset/images/foto-video/foto-3.webp" alt="Cantiere CO.VER 3" loading="lazy">
+                </div>
+                <div class="fv-gallery__item" data-index="3">
+                    <img src="asset/images/foto-video/foto-4.webp" alt="Cantiere CO.VER 4" loading="lazy">
+                </div>
+                <div class="fv-gallery__item" data-index="4">
+                    <img src="asset/images/foto-video/foto-5.webp" alt="Cantiere CO.VER 5" loading="lazy">
+                </div>
+                <div class="fv-gallery__item" data-index="5">
+                    <img src="asset/images/foto-video/foto-6.webp" alt="Cantiere CO.VER 6" loading="lazy">
+                </div>
+                <div class="fv-gallery__item" data-index="6">
+                    <img src="asset/images/foto-video/foto-7.webp" alt="Cantiere CO.VER 7" loading="lazy">
+                </div>
+                <div class="fv-gallery__item" data-index="7">
+                    <img src="asset/images/foto-video/foto-8.webp" alt="Cantiere CO.VER 8" loading="lazy">
+                </div>
+                <div class="fv-gallery__item" data-index="8">
+                    <img src="asset/images/foto-video/foto-9.webp" alt="Cantiere CO.VER 9" loading="lazy">
+                </div>
+                <div class="fv-gallery__item" data-index="9">
+                    <img src="asset/images/foto-video/foto-10.webp" alt="Cantiere CO.VER 10" loading="lazy">
+                </div>
+                <div class="fv-gallery__item" data-index="10">
+                    <img src="asset/images/foto-video/foto-11.webp" alt="Cantiere CO.VER 11" loading="lazy">
+                </div>
+                <div class="fv-gallery__item" data-index="11">
+                    <img src="asset/images/foto-video/foto-12.webp" alt="Cantiere CO.VER 12" loading="lazy">
+                </div>
+                <div class="fv-gallery__item" data-index="12">
+                    <img src="asset/images/foto-video/foto-13.webp" alt="Cantiere CO.VER 13" loading="lazy">
+                </div>
+                <div class="fv-gallery__item" data-index="13">
+                    <img src="asset/images/foto-video/foto-14.webp" alt="Cantiere CO.VER 14" loading="lazy">
+                </div>
+                <div class="fv-gallery__item" data-index="14">
+                    <img src="asset/images/foto-video/foto-15.webp" alt="Cantiere CO.VER 15" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- SEZIONE VIDEO — pronta da popolare -->
+        <section class="fv-section fv-section--alt">
+            <div class="fv-intro">
+                <h2 class="fv-intro__titolo">Video</h2>
+                <div class="fv-intro__divider"></div>
+                <p class="fv-intro__testo">Riprese dai cantieri e timelapse dei nostri interventi.</p>
+            </div>
+            <div class="fv-video-grid">
+                <!--
+          Per aggiungere un video YouTube incollare questo blocco:
+          <div class="fv-video__item">
+            <div class="fv-video__wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/ID_VIDEO"
+                title="Descrizione video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy">
+              </iframe>
+            </div>
+            <p class="fv-video__caption">Titolo del video</p>
+          </div>
+        -->
+                <p class="fv-video__placeholder">Video in arrivo.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- LIGHTBOX -->
+    <div class="fv-lightbox" id="fvLightbox" role="dialog" aria-modal="true" aria-label="Visualizzatore immagini">
+        <div class="fv-lightbox__backdrop" id="fvBackdrop"></div>
+        <button type="button" class="fv-lightbox__close" id="fvClose" aria-label="Chiudi">✕</button>
+        <div class="fv-lightbox__content">
+            <button type="button" class="fv-lightbox__prev" id="fvPrev" aria-label="Foto precedente">&#8249;</button>
+            <img src="" alt="" class="fv-lightbox__img" id="fvImg">
+            <button type="button" class="fv-lightbox__next" id="fvNext" aria-label="Foto successiva">&#8250;</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+
+                <div class="footer__col">
+                    <img src="asset/images/loghi/logo-cover-footer.png" alt="CO.VER srl" class="footer__logo">
+                    <p class="footer__tagline">Edilizia · Trasporti · Ambiente</p>
+                    <p class="footer__indirizzo">Via Gran Bretagna, 18<br>81055 Santa Maria Capua Vetere (CE)</p>
+                </div>
+
+                <div class="footer__col">
+                    <h4 class="footer__titolo-col">Link Rapidi</h4>
+                    <ul class="footer__links">
+                        <li><a href="index.html#home" class="footer__link">Home</a></li>
+                        <li><a href="index.html#azienda" class="footer__link">Chi Siamo</a></li>
+                        <li><a href="index.html#servizi" class="footer__link">Servizi</a></li>
+                        <li><a href="index.html#galleria" class="footer__link">Galleria Lavori</a></li>
+                        <li><a href="foto-video.html" class="footer__link">Foto e Video</a></li>
+                        <li><a href="automezzi.html" class="footer__link">Automezzi</a></li>
+                        <li><a href="index.html#partner" class="footer__link">Partner</a></li>
+                        <li><a href="index.html#contatti" class="footer__link">Contatti</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__col">
+                    <h4 class="footer__titolo-col">Seguici</h4>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <circle cx="12" cy="12" r="4" />
+                                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="footer__contatti-rapidi">
+                        <p>Tel: 0823 704255</p>
+                        <p>Cell: 335 7552975</p>
+                        <p>verrengiacover@covercostruzioni.it</p>
+                        <p>amministrazione@covercostruzioni.it</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer__copyright">
+            <div class="container">
+                <p>© 2025 CO.VER srl — Tutti i diritti riservati | P.IVA: 03665260612</p>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="main.js" defer></script>
+
+    <!-- Lightbox gallery — JS inline, indipendente da main.js -->
+    <script>
+        (function () {
+
+            /* Raccoglie sorgenti e alt da tutti gli item della griglia */
+            var items = Array.from(document.querySelectorAll('.fv-gallery__item'));
+            var sources = items.map(function (el) { return el.querySelector('img').src; });
+            var alts = items.map(function (el) { return el.querySelector('img').alt; });
+
+            var lightbox = document.getElementById('fvLightbox');
+            var imgEl = document.getElementById('fvImg');
+            var btnClose = document.getElementById('fvClose');
+            var btnPrev = document.getElementById('fvPrev');
+            var btnNext = document.getElementById('fvNext');
+            var backdrop = document.getElementById('fvBackdrop');
+            var current = 0;
+
+            /* Apre il lightbox sulla foto selezionata */
+            function apri(index) {
+                current = index;
+                imgEl.src = sources[current];
+                imgEl.alt = alts[current];
+                lightbox.classList.add('fv-lightbox--open');
+                document.body.style.overflow = 'hidden';
+                btnClose.focus();
+            }
+
+            /* Chiude il lightbox */
+            function chiudi() {
+                lightbox.classList.remove('fv-lightbox--open');
+                imgEl.src = '';
+                document.body.style.overflow = '';
+            }
+
+            /* Foto precedente con loop circolare */
+            function precedente() {
+                current = (current - 1 + sources.length) % sources.length;
+                imgEl.src = sources[current];
+                imgEl.alt = alts[current];
+            }
+
+            /* Foto successiva con loop circolare */
+            function successiva() {
+                current = (current + 1) % sources.length;
+                imgEl.src = sources[current];
+                imgEl.alt = alts[current];
+            }
+
+            /* Click sulle miniature → apre lightbox */
+            items.forEach(function (item) {
+                item.addEventListener('click', function () {
+                    apri(parseInt(this.getAttribute('data-index'), 10));
+                });
+            });
+
+            /* Pulsanti lightbox */
+            btnClose.addEventListener('click', chiudi);
+            backdrop.addEventListener('click', chiudi);
+            btnPrev.addEventListener('click', precedente);
+            btnNext.addEventListener('click', successiva);
+
+            /* Navigazione da tastiera */
+            document.addEventListener('keydown', function (e) {
+                if (
