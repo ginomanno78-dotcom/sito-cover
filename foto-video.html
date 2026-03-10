@@ -188,6 +188,24 @@
             background: rgba(255, 255, 255, .35)
         }
 
+        /* Frecce dentro la foto su mobile */
+        @media (max-width: 768px) {
+            .fv-lightbox__content { position: relative; }
+            .fv-lightbox__prev,
+            .fv-lightbox__next {
+                position: absolute;
+                z-index: 9003;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 40px;
+                height: 40px;
+                font-size: 22px;
+                background: rgba(0, 0, 0, .5);
+            }
+            .fv-lightbox__prev { left: 14px; }
+            .fv-lightbox__next { right: 14px; }
+        }
+
         @media(max-width:767px) {
             .fv-section {
                 padding: 56px 0 60px
@@ -501,7 +519,23 @@
                 if (e.key === 'Escape') chiudi();
                 if (e.key === 'ArrowLeft') precedente();
                 if (e.key === 'ArrowRight') successiva();
-            });
+            })
+
+    /* Swipe touch: scorri le foto con il dito */
+    var touchStartX = 0;
+    var touchStartY = 0;
+    lightbox.addEventListener('touchstart', function (e) {
+      touchStartX = e.changedTouches[0].clientX;
+      touchStartY = e.changedTouches[0].clientY;
+    }, { passive: true });
+    lightbox.addEventListener('touchend', function (e) {
+      var dx = e.changedTouches[0].clientX - touchStartX;
+      var dy = e.changedTouches[0].clientY - touchStartY;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+        if (dx < 0) successiva();
+        else        precedente();
+      }
+    }, { passive: true });;
 
         });
     </script>
