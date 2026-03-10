@@ -433,8 +433,12 @@
                     <div class="footer__contatti-rapidi">
                         <p>Tel: 0823 704255</p>
                         <p>Cell: 335 7552975</p>
-                        <p>verrengiacover@covercostruzioni.it</p>
-                        <p>amministrazione@covercostruzioni.it</p>
+                        <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                data-cfemail="1f697a6d6d7a7178767e7c70697a6d5f7c70697a6d7c706c6b6d6a657670717631766b">[email&#160;protected]</a>
+                        </p>
+                        <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                data-cfemail="3a5b5757535453494e485b405355545f7a59554c5f485955494e484f405355545314534e">[email&#160;protected]</a>
+                        </p>
                     </div>
                 </div>
 
@@ -447,17 +451,18 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
     <script src="main.js" defer></script>
 
     <!-- Lightbox gallery — JS inline, indipendente da main.js -->
     <script>
-        (function () {
+        document.addEventListener('DOMContentLoaded', function () {
 
-            /* Raccoglie sorgenti e alt da tutti gli item della griglia */
-            var items = Array.from(document.querySelectorAll('.fv-gallery__item'));
-            var sources = items.map(function (el) { return el.querySelector('img').src; });
-            var alts = items.map(function (el) { return el.querySelector('img').alt; });
+            /* Raccoglie percorsi e alt direttamente dall'attributo src (sicuro con lazy loading) */
+            var gallery = document.getElementById('fvGallery');
+            var items = Array.from(gallery.querySelectorAll('.fv-gallery__item'));
+            var sources = items.map(function (el) { return el.querySelector('img').getAttribute('src'); });
+            var alts = items.map(function (el) { return el.querySelector('img').getAttribute('alt'); });
 
             var lightbox = document.getElementById('fvLightbox');
             var imgEl = document.getElementById('fvImg');
@@ -498,11 +503,11 @@
                 imgEl.alt = alts[current];
             }
 
-            /* Click sulle miniature → apre lightbox */
-            items.forEach(function (item) {
-                item.addEventListener('click', function () {
-                    apri(parseInt(this.getAttribute('data-index'), 10));
-                });
+            /* Event delegation sul container — robusto contro DOM modificato dinamicamente */
+            gallery.addEventListener('click', function (e) {
+                var item = e.target.closest('.fv-gallery__item');
+                if (!item) return;
+                apri(parseInt(item.getAttribute('data-index'), 10));
             });
 
             /* Pulsanti lightbox */
@@ -511,6 +516,16 @@
             btnPrev.addEventListener('click', precedente);
             btnNext.addEventListener('click', successiva);
 
-            /* Navigazione da tastiera */
+            /* Tastiera: Escape chiude, frecce navigano */
             document.addEventListener('keydown', function (e) {
-                if (
+                if (!lightbox.classList.contains('fv-lightbox--open')) return;
+                if (e.key === 'Escape') chiudi();
+                if (e.key === 'ArrowLeft') precedente();
+                if (e.key === 'ArrowRight') successiva();
+            });
+
+        });
+    </script>
+</body>
+
+</html>
