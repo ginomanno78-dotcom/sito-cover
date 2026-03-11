@@ -252,6 +252,14 @@ p {
   transition: transform var(--transition);
 }
 
+.navbar__item.open .navbar__dropdown {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0s;
+}
+
 .navbar__item.open .navbar__toggle {
   transform: rotate(180deg);
 }

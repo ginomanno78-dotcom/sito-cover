@@ -237,7 +237,7 @@
         observer.disconnect();
       }
     });
-  }, { threshold: 0.3 });
+  }, { threshold: 0.1 });
 
   var sezione = document.querySelector('.azienda');
   if (sezione) observer.observe(sezione);
@@ -338,7 +338,7 @@
           // Errore server Formspree
           submitBtn.textContent = 'Invia Richiesta';
           submitBtn.disabled = false;
-          mostraErrore('errore-messaggio', 'Errore nell'invio. Riprova o contattaci per telefono.');
+          mostraErrore('errore-messaggio', "Errore nell'invio. Riprova o contattaci per telefono.");
         }
       })
       .catch(function() {
