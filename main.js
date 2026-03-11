@@ -318,8 +318,35 @@
 
     // Se tutto ok mostra conferma
     if (valido) {
-      form.style.display = 'none';
-      if (conferma) conferma.style.display = 'flex';
+      var submitBtn = form.querySelector('.form__submit');
+      submitBtn.textContent = 'Invio in corso...';
+      submitBtn.disabled = true;
+
+      var dati = new FormData(form);
+
+      fetch('https://formspree.io/f/mkoqropr', {
+        method: 'POST',
+        body: dati,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function(risposta) {
+        if (risposta.ok) {
+          // Successo: nasconde form e mostra conferma
+          form.style.display = 'none';
+          if (conferma) conferma.style.display = 'flex';
+        } else {
+          // Errore server Formspree
+          submitBtn.textContent = 'Invia Richiesta';
+          submitBtn.disabled = false;
+          mostraErrore('errore-messaggio', 'Errore nell'invio. Riprova o contattaci per telefono.');
+        }
+      })
+      .catch(function() {
+        // Errore di rete
+        submitBtn.textContent = 'Invia Richiesta';
+        submitBtn.disabled = false;
+        mostraErrore('errore-messaggio', 'Connessione assente. Riprova più tardi.');
+      });
     }
   });
 })();
