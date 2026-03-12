@@ -248,6 +248,27 @@
       fill: #ffffff;
     }
 
+    /* Bottone chiudi nell'header (visibile solo mobile) */
+    .cb-btn-chiudi {
+      display: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      border: none;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+    .cb-btn-chiudi:hover { background: rgba(255,255,255,0.25); }
+    .cb-btn-chiudi svg {
+      width: 18px;
+      height: 18px;
+      fill: #ffffff;
+    }
+
     /* Mobile responsive */
     @media (max-width: 480px) {
       .cb-finestra {
@@ -262,6 +283,12 @@
       .cb-trigger {
         bottom: 20px;
         right: 20px;
+      }
+      .cb-trigger.aperto {
+        display: none;
+      }
+      .cb-btn-chiudi {
+        display: flex !important;
       }
     }
   `;
@@ -313,6 +340,11 @@
             Online — risponde subito
           </div>
         </div>
+        <button class="cb-btn-chiudi" id="cb-btn-chiudi" aria-label="Chiudi chat">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </button>
       </div>
       <div class="cb-messaggi" id="cb-messaggi"></div>
       <div class="cb-input-area">
@@ -463,6 +495,17 @@
     btnInvia.addEventListener('click', function () {
       invia(input.value.trim());
     });
+
+    // Bottone chiudi nell'header (mobile)
+    const btnChiudiHeader = document.getElementById('cb-btn-chiudi');
+    if (btnChiudiHeader) {
+      btnChiudiHeader.addEventListener('click', function () {
+        aperto = false;
+        trigger.classList.remove('aperto');
+        finestra.classList.remove('aperta');
+        badge.classList.remove('visibile');
+      });
+    }
 
     // Mostra badge dopo 5 secondi se non aperto
     setTimeout(function () {
