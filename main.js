@@ -146,7 +146,8 @@
 (function () {
   var slides = document.querySelectorAll('.hero__slide');
   var dots = document.querySelectorAll('.hero__dot');
-  if (!slides.length) return;
+  // Hero statico: se c'è una sola slide (o nessuna), non avviare lo slideshow
+  if (slides.length < 2) return;
   var current = 0;
   var timer;
 

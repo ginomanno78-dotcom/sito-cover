@@ -560,15 +560,15 @@ p {
 
 .hero__slide-text {
   font-family: var(--font-title);
-  font-size: clamp(1.2rem, 4vw, 2.5rem);
+  font-size: calc(clamp(1.2rem, 4vw, 2.5rem) - 9px);
   font-weight: 700;
   color: var(--color-white);
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  text-shadow: 2px 2px 0 rgb(0, 0, 0);
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease forwards;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.7);
+  opacity: 1;
+  transform: none;
+  animation: none;
 }
 
 @keyframes fadeInUp {
@@ -594,7 +594,7 @@ p {
 
 .hero__sub2 {
   font-family: var(--font-body);
-  font-size: clamp(0.78rem, 1.6vw, 1.1rem);
+  font-size: clamp(0.78rem, 1.6vw, 0.9rem);
   color: var(--color-white);
   opacity: 0.85;
   max-width: 50vw;
@@ -604,12 +604,27 @@ p {
   text-shadow: 1px 1px 0 #000;
 }
 
+.hero__overlay--static {
+  position: absolute;
+  inset: 0;
+  background: rgba(28, 28, 28, 0.33);
+  z-index: 1;
+}
+
 .hero__cta {
   display: flex;
   gap: 16px;
   margin-top: 32px;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.hero .edilizia-cta__btn {
+  color: #282855;
+}
+
+.hero .edilizia-cta__btn:hover {
+  color: var(--color-white);
 }
 
 .btn {
@@ -775,18 +790,24 @@ p {
 
 .azienda__foto-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
   margin-top: 76px;
 }
 
+/* Foto ufficio 400×300: stesso rapporto per entrambe, bordo incluso nel calcolo (border-box) */
 .azienda__foto {
   width: 100%;
-  height: 220px;
+  max-width: 100%;
+  min-width: 0;
+  aspect-ratio: 400 / 300;
+  height: auto;
   object-fit: cover;
+  object-position: center;
   border-radius: 4px;
   display: block;
-  border: 3px solid #cccccc;
+  border: 2px solid #282855;
+  box-sizing: border-box;
 }
 
 /* Logo certificazioni */
@@ -917,15 +938,14 @@ p {
     gap: 10px;
   }
 
-  .azienda__foto-grid {
+  .azienda__cert-grid {
     grid-template-columns: 1fr;
   }
+}
 
-  .azienda__foto {
-    height: 200px;
-  }
-
-  .azienda__cert-grid {
+/* Mobile verticale: foto Chi siamo in colonna; in orizzontale restano affiancate (griglia base) */
+@media (max-width: 767px) and (orientation: portrait) {
+  .azienda__foto-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -1241,7 +1261,7 @@ p {
 /* Track — contiene tutti i loghi e scorre in loop */
 .partner__track {
   display: flex;
-  gap: 40px;
+  gap: 0;
   align-items: center;
   width: max-content;
   animation: scrollLoghi 30s linear infinite;
@@ -1269,6 +1289,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 40px;
   padding: 12px;
   border-radius: 6px;
   transition: transform var(--transition);
