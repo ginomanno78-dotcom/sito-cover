@@ -620,7 +620,7 @@ p {
 }
 
 .hero .edilizia-cta__btn {
-  color: #282855;
+  color: #000000;
 }
 
 .hero .edilizia-cta__btn:hover {
@@ -857,7 +857,7 @@ p {
   font-family: var(--font-body);
   font-size: 0.72rem;
   font-weight: 700;
-  color: var(--color-gray);
+  color: #282855;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin-top: 6px;
@@ -1531,7 +1531,7 @@ p {
 .footer__tagline {
   font-family: var(--font-title);
   font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(205, 205, 205, 0.8);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 12px;
@@ -1540,7 +1540,7 @@ p {
 .footer__indirizzo {
   font-family: var(--font-body);
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(205, 205, 205, 0.8);
   line-height: 1.7;
 }
 
@@ -1549,7 +1549,7 @@ p {
   font-family: var(--font-title);
   font-size: 0.82rem;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgb(255, 255, 255);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 20px;
@@ -1565,7 +1565,7 @@ p {
 .footer__link {
   font-family: var(--font-body);
   font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(205, 205, 205, 0.8);
   text-decoration: none;
   transition: color var(--transition), padding-left var(--transition);
 }
@@ -1590,7 +1590,7 @@ p {
   height: 40px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(205, 205, 205, 0.8);
   transition: color var(--transition), border-color var(--transition), transform var(--transition);
 }
 
@@ -1614,7 +1614,7 @@ p {
 .footer__contatti-rapidi p {
   font-family: var(--font-body);
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgb(205, 205, 205);
   line-height: 1.5;
 }
 
@@ -1627,7 +1627,7 @@ p {
 .footer__copyright p {
   font-family: var(--font-body);
   font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgb(150, 150, 150);
   text-align: center;
 }
 
