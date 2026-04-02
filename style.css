@@ -614,13 +614,14 @@ p {
 .hero__cta {
   display: flex;
   gap: 16px;
-  margin-top: 32px;
+  margin-top: 56px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .hero .edilizia-cta__btn {
   color: #000000;
+  border-radius: 10px;
 }
 
 .hero .edilizia-cta__btn:hover {
@@ -690,9 +691,35 @@ p {
 
 /* Hero responsive mobile */
 @media (max-width: 767px) {
+
+  /* Sfondo hero: ancoraggio a destra così la parte destra dell’immagine resta visibile su schermi stretti */
+  .hero__slide {
+    background-position: right center;
+  }
+
+  /* Hero mobile: logo più presente e sottotitolo più leggibile/proporzionato */
+  .hero__logo {
+    width: min(82vw, 360px);
+    min-width: 0;
+  }
+
+  .hero__slide-text {
+    width: min(82vw, 360px);
+    font-size: clamp(1.05rem, 4.8vw, 1.45rem);
+    letter-spacing: 0.12em;
+    line-height: 1.25;
+  }
+
   .hero__cta {
     flex-direction: column;
     align-items: center;
+  }
+
+  /* CTA hero più compatto su mobile */
+  .hero .edilizia-cta__btn {
+    padding: 10px 22px;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
   }
 
   .btn {
@@ -790,17 +817,17 @@ p {
 
 .azienda__foto-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 12px;
   margin-top: 76px;
 }
 
-/* Foto ufficio 400×300: stesso rapporto per entrambe, bordo incluso nel calcolo (border-box) */
+/* Foto ufficio singola 1152×864 (4:3), bordo incluso nel calcolo (border-box) */
 .azienda__foto {
   width: 100%;
   max-width: 100%;
   min-width: 0;
-  aspect-ratio: 400 / 300;
+  aspect-ratio: 1152 / 864;
   height: auto;
   object-fit: cover;
   object-position: center;
@@ -933,19 +960,16 @@ p {
     padding: 48px 0;
   }
 
+  .azienda__foto {
+    width: 100%;
+  }
+
   .azienda__counter-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
   }
 
   .azienda__cert-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Mobile verticale: foto Chi siamo in colonna; in orizzontale restano affiancate (griglia base) */
-@media (max-width: 767px) and (orientation: portrait) {
-  .azienda__foto-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -1680,11 +1704,32 @@ p {
   background-color: var(--color-primary);
 }
 
+/* Overlay blu unificato per tutte le mini hero basate su .hero-mini */
 .hero-mini__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(28, 28, 60, 0.4);
+  background: rgba(28, 28, 55, 0.20);
   z-index: 1;
+}
+
+/* Edilizia e Automezzi: stessa altezza di .page-hero */
+.hero-mini--page-hero {
+  height: 320px;
+  min-height: 0;
+}
+
+/* Mini hero Edilizia: overlay blu al 20% */
+.hero-mini--overlay-30 .hero-mini__overlay {
+  background: rgba(28, 28, 55, 0.2);
+}
+
+/* Ambiente, Trasporti, Automezzi: overlay blu al 40% */
+.hero-mini--overlay-40 .hero-mini__overlay {
+  background: rgba(28, 28, 55, 0.5);
+}
+
+.page-hero--overlay-40 .page-hero__overlay {
+  background: rgba(28, 28, 55, 0.5);
 }
 
 .hero-mini__content {
@@ -2633,7 +2678,7 @@ p {
   font-size: 0.82rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  border-radius: 3px;
+  border-radius: 10px;
   font-weight: 700;
   transition: background-color var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
 }
@@ -2676,10 +2721,11 @@ p {
   text-align: center;
 }
 
+/* Stesso tono blu al 33% delle mini hero .hero-mini */
 .page-hero__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(28, 28, 60, 0.33);
 }
 
 .page-hero__content {
@@ -2737,6 +2783,10 @@ p {
 
 @media (max-width: 767px) {
   .page-hero {
+    height: 240px;
+  }
+
+  .hero-mini--page-hero {
     height: 240px;
   }
 }
